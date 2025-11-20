@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Pessoal | Dev Front-end</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Via CDN para praticidade neste ambiente) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Ícones (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Configurações Customizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        'void': '#050511',
+                        'glass': 'rgba(255, 255, 255, 0.03)',
+                        'glass-border': 'rgba(255, 255, 255, 0.08)',
+                        'primary': '#8b5cf6', // Roxo Violeta
+                        'secondary': '#06b6d4', // Azul Ciano
+                        'terciary': '#057A55', // Verde
+                        'quaternary': '#C27803', // Amarelo
+                    },
+                    animation: {
+                        'blob': 'blob 10s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Reset e Customizações Específicas */
+        body {
+            background-color: #050511;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar customizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050511;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+
+        /* Utilitário de Vidro (Glassmorphism) */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradiente de Texto */
+        .text-gradient {
+            background: linear-gradient(to right, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Animação de Background (Orbes) */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        /* Spotlight Effect para Cards */
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+        .spotlight-card::before {
+            background: radial-gradient(
+                800px circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 255, 255, 0.06),
+                transparent 40%
+            );
+            border-radius: inherit;
+            content: "";
+            height: 100%;
+            left: 0px;
+            opacity: 0;
+            position: absolute;
+            top: 0px;
+            transition: opacity 0.5s;
+            width: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        /* Utilitário para ocultar elementos antes do scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased relative selection:bg-primary selection:text-white">
+
+    <!-- Background Dinâmico -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="orb bg-primary w-96 h-96 top-0 left-1/4 animate-blob"></div>
+        <div class="orb bg-secondary w-96 h-96 bottom-0 right-1/4 animate-blob animation-delay-2000"></div>
+        <div class="orb bg-purple-900 w-80 h-80 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold tracking-tighter hover:text-primary transition-colors">
+                JOÃO MAYER<span class="text-primary">.</span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-white transition-colors">Quem sou eu</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projetos</a>
+                <a href="#ambition" class="hover:text-white transition-colors">Ambição</a>
+                <a href="#contact" class="px-4 py-2 rounded-full border border-glass-border hover:bg-white/5 transition-all">Contato</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-white" onclick="toggleMobileMenu()">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-void/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 text-xl md:hidden">
+            <button class="absolute top-6 right-6 text-3xl" onclick="toggleMobileMenu()"><i class="ph ph-x"></i></button>
+            <a href="#about" onclick="toggleMobileMenu()">Quem sou</a>
+            <a href="#projects" onclick="toggleMobileMenu()">Projetos</a>
+            <a href="#ambition" onclick="toggleMobileMenu()">Ambição</a>
+            <a href="#contact" onclick="toggleMobileMenu()">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 relative pt-20">
+        <div class="text-center max-w-4xl mx-auto z-10">
+            <div class="inline-block px-3 py-1 mb-4 text-xs font-medium tracking-wider text-secondary uppercase bg-secondary/10 rounded-full border border-secondary/20 animate-fade-in-up">
+                Bem-vindo ao meu universo digital
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 tracking-tight leading-tight animate-fade-in-up" style="animation-delay: 0.1s;">
+                Criando o <br/>
+                <span class="text-gradient" id="typewriter"></span><span class="animate-pulse text-primary">|</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 animate-fade-in-up" style="animation-delay: 0.2s;">
+                Um estudante cheio de sonhos e ambições em tornar este mundo um lugar melhor, apaixonado por liderança, comunicação e tecnologia
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.3s;">
+                <a href="#projects" class="px-8 py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                    Ver Projetos <i class="ph-bold ph-arrow-right"></i>
+                </a>
+                <a href="#contact" class="px-8 py-4 rounded-full glass-card text-white font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                    Entrar em contato
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <i class="ph ph-mouse-simple text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- Quem Sou Eu -->
+    <section id="about" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Coluna de Imagem/Visual -->
+                <div class="relative reveal">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-2xl blur-2xl opacity-20 transform rotate-6"></div>
+                    <div class="glass-card rounded-2xl p-2 relative overflow-hidden aspect-square lg:aspect-[4/5] group">
+                        <img src="./src/images/IMG_6852.jpg" 
+                             alt="Programador" 
+                             class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110">
+                        
+                        <!-- Badge Flutuante -->
+                        <div class="absolute bottom-6 right-6 glass-card px-4 py-2 rounded-lg flex items-center gap-2 text-sm border-l-4 border-secondary">
+                            <i class="ph-fill ph-code text-secondary"></i>
+                            <span>João Mayer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna de Texto -->
+                <div class="reveal">
+                    <h2 class="text-sm font-bold text-primary uppercase tracking-widest mb-2">Quem sou eu?</h2>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold mb-6">Além de um Estudante</h3>
+                    <div class="space-y-4 text-gray-400 leading-relaxed">
+                        <p>
+                            Desde a infância, a pergunta de como transformar o mundo em um lugar melhor acendeu uma ambição que se tornou inegociável: ajudar a todos ao redor. No entanto, essa busca solitária ensinou uma lição crucial: a verdadeira liderança não espera por consenso, ela age por iniciativa, e a comunicação é a ponte para a compreensão global. É por isso que, hoje, o rigor do Desenvolvimento de Sistemas é o meu campo de batalha; vejo a tecnologia como a linguagem mais poderosa para construir soluções escaláveis e impulsionar mudanças equitativas na América Latina. Meu sucesso não é medido por títulos, mas pelo número de vidas que ajudo. Não sou apenas um estudante, sou um Líder e um construtor focado em impacto. Essa é a essência da minha identidade.
+                        </p>
+                    </div>
+
+                    <!-- Stats Rápidos -->
+                    <div class="grid grid-cols-3 gap-4 mt-8 pt-8 border-t border-glass-border">
+                        <div>
+                            <span class="block text-2xl font-bold text-white">R$3000+</span>
+                            <span class="text-xs text-gray-500 uppercase">Ganhos em Prêmios</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-white">100%</span>
+                            <span class="text-xs text-gray-500 uppercase">Comprometimento</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-white">∞</span>
+                            <span class="text-xs text-gray-500 uppercase">Vontade de Aprender</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Extra: Tech Galaxy -->
+    <section class="py-20 px-6 bg-black/20">
+        <div class="max-w-7xl mx-auto text-center mb-12 reveal">
+            <h2 class="text-3xl font-display font-bold">Ferramentas</h2>
+            <p class="text-gray-400 mt-2">Arsenal para construir o futuro</p>
+        </div>
+        
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+            <!-- Tech Cards -->
+            <div class="glass-card p-6 rounded-xl flex flex-col items-center hover:bg-white/5 transition-colors group cursor-default">
+                <i class="ph-fill ph-file-html text-4xl text-orange-500 mb-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold">HTML5</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col items-center hover:bg-white/5 transition-colors group cursor-default">
+                <i class="ph-fill ph-paint-brush-broad text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold">CSS3</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col items-center hover:bg-white/5 transition-colors group cursor-default">
+                <i class="ph-fill ph-code text-4xl text-yellow-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold">JavaScript ES6+</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col items-center hover:bg-white/5 transition-colors group cursor-default">
+                <i class="ph-fill ph-app-window text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold">UX Strategy and Usability</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col items-center hover:bg-white/5 transition-colors group cursor-default">
+                <i class="ph-fill ph-chart-bar text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold">UML</span>
+            </div>
+            <div class="glass-card p-6 rounded-xl flex flex-col items-center hover:bg-white/5 transition-colors group cursor-default">
+                <i class="ph-fill ph-desktop text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold">Computer architecture</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-sm font-bold text-primary uppercase tracking-widest mb-2">Portfolio</h2>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold">Trabalhos Recentes</h3>
+                </div>
+                <a href="https://github.com/ojoaomayer" class="text-sm text-gray-400 hover:text-white mt-4 md:mt-0 flex items-center gap-1 group">
+                    Ver GitHub <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="cards-container">
+
+                <!-- iAgro -->
+                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-pointer reveal">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
+                        <img src="./src/images/iagro.png" alt="Projeto 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">UML</span>
+                            <span class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30">Startup</span>
+                            <span class="text-xs px-2 py-1 rounded bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">UX Design</span>
+                            <span class="text-xs px-2 py-1 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30">Leadership</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">iAgro</h4>
+                        <p class="text-gray-400 text-sm mb-4">Startup voltada ao agronegócio criada por mim e minha equipe, sou o CEO e não me envolvi no desenvolvimento, apenas na prototipação e pitch</p>
+                        <a href="https://app.iagrobrasil.com.br/" class="inline-flex items-center text-sm font-bold text-white hover:gap-2 transition-all">
+                            Ver Detalhes <i class="ph-bold ph-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- TinWork -->
+                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-pointer reveal">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
+                        <img src="./src/images/tinwork.png" alt="Projeto 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-primary/20 text-primary border border-primary/30">UML</span>
+                            <span class="text-xs px-2 py-1 rounded bg-secondary/20 text-secondary border border-secondary/30">UX Design</span>
+                            <span class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30">Startup</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">TinWork</h4>
+                        <p class="text-gray-400 text-sm mb-4">Tinder do mercado de trabalho, primeira ideia de solução para jovens e estudantes que buscam entrar no mercado de trabalho e empresas que buscam talentos, com implementação de IA para ajudar os jovens e empresas</p>
+                        <a class="inline-flex items-center text-sm font-bold text-white hover:gap-2 transition-all">
+                            Em desenvolvimento <i class="ph-bold ph-blueprint ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Reserva Aí -->
+                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-pointer reveal">
+                    <div class="h-48 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
+                        <img src="./src/images/hotel.png" alt="Projeto 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded bg-primary/20 text-primary border border-primary/30">HTML</span>
+                            <span class="text-xs px-2 py-1 rounded bg-secondary/20 text-secondary border border-secondary/30">CSS</span>
+                            <span class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30">JavaScript</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">Reserva Aí</h4>
+                        <p class="text-gray-400 text-sm mb-4">Site para gestão de hotéis, projeto de conclusão de curso no ensino médio</p>
+                        <a href="https://github.com/AldohenriqueBS/tcc" class="inline-flex items-center text-sm font-bold text-white hover:gap-2 transition-all">
+                            Ver Detalhes <i class="ph-bold ph-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambição / Futuro -->
+    <section id="ambition" class="py-24 px-6 relative overflow-hidden">
+        <!-- Decorative Line -->
+        <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary to-transparent opacity-20 hidden md:block"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Minha Ambição</h2>
+                <p class="text-gray-400">Onde quero chegar e o legado que quero construir.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-primary reveal hover:-translate-y-2 transition-transform">
+                    <i class="ph ph-rocket-launch text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Liderança</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Meu objetivo é liderar equipes e projetos de grande impacto, transformar ideias em soluções reais para nosso mundo, transformar nosso planeta em um lugar melhor
+                    </p>
+                </div>
+
+                 <div class="glass-card p-8 rounded-2xl border-l-4 border-l-primary reveal hover:-translate-y-2 transition-transform">
+                    <i class="ph ph-volleyball text-4xl text-quaternary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Trabalho em Equipe</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Como atleta de vôlei há 4 anos, entendo que ninguém vence sozinho. Valorizo a sinergia, a comunicação clara e o levantamento mútuo para que o time inteiro marque o ponto e o projeto alcance o sucesso.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-primary reveal hover:-translate-y-2 transition-transform">
+                    <i class="ph ph-speedometer text-4xl text-terciary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Performance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Acredito que a excelência é um hábito, não um ato. Aplico a mesma disciplina e foco do esporte nos meus projetos profissionais, buscando sempre superar meus próprios limites e alcançar resultados excepcionais.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-l-secondary reveal hover:-translate-y-2 transition-transform md:mt-12">
+                    <i class="ph ph-globe-hemisphere-west text-4xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Inovação</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Quero ser pioneiro na inovação em nosso planeta, desenvolvendo ideias novas e revolucionando ideias antigas para solucionar nossos problemas de hoje
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="py-24 px-6 border-t border-white/5">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <h2 class="text-4xl font-display font-bold mb-6">Vamos construir algo incrível?</h2>
+            <p class="text-gray-400 mb-10">
+                Estou sempre aberto a discutir novos projetos, oportunidades criativas ou apenas trocar uma ideia sobre tecnologia ou o que vier na telha.
+            </p>
+            
+            <a href="https://wa.me/5542991667003" class="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] transition-shadow transform hover:scale-105 duration-300">
+                Entre em Contato
+            </a>
+
+            <div class="flex justify-center gap-8 mt-12">
+                <a href="https://github.com/ojoaomayer" class="text-gray-400 hover:text-white hover:scale-110 transition-all text-2xl"><i class="ph-fill ph-github-logo"></i></a>
+                <a href="https://www.linkedin.com/in/joaomayer/" class="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all text-2xl"><i class="ph-fill ph-linkedin-logo"></i></a>
+                <a href="https://www.instagram.com/ojoaomayer/" class="text-gray-400 hover:text-pink-400 hover:scale-110 transition-all text-2xl"><i class="ph-fill ph-instagram-logo"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-600 text-sm">
+        <p>&copy; 2025 Desenvolvido por @ojoaomayer <i class="ph-fill ph-rocket"></i></p>
+    </footer>
+
+    <!-- Scripts Lógicos -->
+    <script>
+        // 1. Efeito de Digitação no Hero
+        const words = ["Futuro.", "Inovador.", "Impacto."];
+        let i = 0;
+        let timer;
+
+        function typeWriter() {
+            const heading = document.getElementById("typewriter");
+            let word = words[i];
+            let current = heading.innerHTML;
+            
+            if (current.length < word.length) {
+                heading.innerHTML = word.substring(0, current.length + 1);
+                timer = setTimeout(typeWriter, 150);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            const heading = document.getElementById("typewriter");
+            let current = heading.innerHTML;
+            
+            if (current.length > 0) {
+                heading.innerHTML = current.substring(0, current.length - 1);
+                timer = setTimeout(erase, 100);
+            } else {
+                i = (i + 1) % words.length;
+                typeWriter();
+            }
+        }
+
+        // Iniciar digitação
+        typeWriter();
+
+
+        // 2. Efeito Spotlight nos Cards (Segue o Mouse)
+        const cardsContainer = document.getElementById("cards-container");
+        const cards = document.querySelectorAll(".spotlight-card");
+
+        cardsContainer.onmousemove = e => {
+            for(const card of cards) {
+                const rect = card.getBoundingClientRect(),
+                      x = e.clientX - rect.left,
+                      y = e.clientY - rect.top;
+
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            }
+        };
+
+        // 3. Navbar Glass Effect on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-void/80', 'backdrop-blur-md', 'border-b', 'border-glass-border');
+            } else {
+                navbar.classList.remove('bg-void/80', 'backdrop-blur-md', 'border-b', 'border-glass-border');
+            }
+        });
+
+        // 4. Scroll Reveal (Aparecer ao rolar)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 5. Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+        }
+    </script>
+</body>
+</html>
