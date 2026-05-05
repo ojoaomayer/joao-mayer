@@ -90,7 +90,7 @@
 
         /* CSS Reset e Customizações Específicas */
         body {
-            background-color: var(--color-void);
+            background-color: #000000;
             color: var(--text-main);
             overflow-x: hidden;
             transition: background-color 0.5s ease, color 0.5s ease;
@@ -194,12 +194,51 @@
             transition: background 0.3s, border-color 0.3s;
         }
 
-        /* Gradiente de Texto */
+        /* Gradiente de Texto — Animado (porta do GradientText do React Bits) */
+        @keyframes gradient-shift {
+            0%   { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
         .text-gradient {
-            background: linear-gradient(to right, #8b5cf6, #06b6d4);
+            background: linear-gradient(
+                to right,
+                #c084fc,   /* violet claro */
+                #8b5cf6,   /* primary purple */
+                #06b6d4,   /* secondary cyan */
+                #38bdf8,   /* sky */
+                #a78bfa,   /* indigo suave */
+                #c084fc    /* fecha no mesmo tom — loop suave */
+            );
+            background-size: 300% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradient-shift 4s ease-in-out infinite alternate;
+        }
+
+        /* ===== VIDEO BACKGROUND ===== */
+        #bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -3;
+            pointer-events: none;
+        }
+
+        #bg-video-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -2;
+            pointer-events: none;
+            transition: background 0.5s ease;
+        }
+
+        .light-mode #bg-video-overlay {
+            background: rgba(240, 244, 248, 0.65);
         }
 
         /* Animação de Background Aurora Boreal */
@@ -209,7 +248,7 @@
             overflow: hidden;
             pointer-events: none;
             z-index: -1;
-            background: var(--color-void);
+            background: transparent;
             transition: background-color 0.5s ease;
         }
 
@@ -390,7 +429,15 @@
 
 <body class="antialiased relative selection:bg-primary selection:text-white">
 
-    <!-- Background Aurora Boreal -->
+    <!-- Video Background fixo -->
+    <video id="bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="./src/videos/background1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay escuro sobre o vídeo -->
+    <div id="bg-video-overlay"></div>
+
+    <!-- Aurora Boreal (sobre o vídeo, transparente) -->
     <div class="aurora-bg">
         <div class="aurora-orb aurora-1"></div>
         <div class="aurora-orb aurora-2"></div>
@@ -826,7 +873,7 @@
                         class="glass-card p-6 rounded-2xl spotlight-card cursor-default group border-b-2 border-b-terciary/40 hover:-translate-y-1 transition-transform">
                         <i
                             class="ph-fill ph-target text-3xl text-terciary mb-4 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="font-bold text-lg mb-2">Content Strategy</h4>
+                        <h4 class="font-bold text-lg mb-2">Estratégia Digital</h4>
                         <p class="text-sm text-gray-400 leading-relaxed">Arquitetura da informação e design focado no
                             usuário para reter atenção e maximizar leads qualificados.</p>
                     </div>
@@ -946,7 +993,7 @@
 
     <!-- Footer -->
     <footer class="py-8 text-center text-gray-600 text-sm">
-        <p>&copy; 2025 Desenvolvido por @ojoaomayer <i class="ph-fill ph-rocket"></i></p>
+        <p>&copy; 2026 Desenvolvido por @ojoaomayer <i class="ph-fill ph-rocket"></i></p>
     </footer>
 
     <!-- Scripts Lógicos -->
