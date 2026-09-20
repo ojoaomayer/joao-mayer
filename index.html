@@ -341,27 +341,39 @@
     </nav>
 
     <!-- Tubelight Navbar -->
-    <div class="fixed bottom-6 sm:bottom-auto sm:top-6 left-1/2 -translate-x-1/2 z-[70]">
-        <div class="flex items-center gap-1 sm:gap-3 bg-glass border border-glass-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg relative" id="tubelight-navbar">
-            <a href="#" class="nav-item relative cursor-pointer text-sm font-semibold px-4 sm:px-6 py-2 rounded-full transition-colors text-gray-400 hover:text-primary active-tab">
-                <span class="hidden md:inline" data-i18n="nav-home">Início</span>
-                <span class="md:hidden"><i class="ph-bold ph-house text-lg"></i></span>
+    <div class="fixed bottom-6 sm:bottom-auto sm:top-6 left-1/2 -translate-x-1/2 z-[70] max-w-[95vw]">
+        <div class="flex items-center gap-1 sm:gap-2 bg-glass border border-glass-border backdrop-blur-lg py-1 px-2 rounded-full shadow-lg relative overflow-x-auto no-scrollbar" id="tubelight-navbar">
+            <a href="#" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary active-tab whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-home">Início</span>
+                <span class="lg:hidden"><i class="ph-bold ph-house text-lg"></i></span>
             </a>
-            <a href="#about" class="nav-item relative cursor-pointer text-sm font-semibold px-4 sm:px-6 py-2 rounded-full transition-colors text-gray-400 hover:text-primary">
-                <span class="hidden md:inline" data-i18n="nav-about">Sobre</span>
-                <span class="md:hidden"><i class="ph-bold ph-user text-lg"></i></span>
+            <a href="#about" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-about">Sobre & Métricas</span>
+                <span class="lg:hidden"><i class="ph-bold ph-user text-lg"></i></span>
             </a>
-            <a href="#journey" class="nav-item relative cursor-pointer text-sm font-semibold px-4 sm:px-6 py-2 rounded-full transition-colors text-gray-400 hover:text-primary">
-                <span class="hidden md:inline" data-i18n="nav-journey">Jornada</span>
-                <span class="md:hidden"><i class="ph-bold ph-path text-lg"></i></span>
+            <a href="#journey" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-journey">Jornada</span>
+                <span class="lg:hidden"><i class="ph-bold ph-path text-lg"></i></span>
             </a>
-            <a href="#projects" class="nav-item relative cursor-pointer text-sm font-semibold px-4 sm:px-6 py-2 rounded-full transition-colors text-gray-400 hover:text-primary">
-                <span class="hidden md:inline" data-i18n="nav-projects">Projetos</span>
-                <span class="md:hidden"><i class="ph-bold ph-briefcase text-lg"></i></span>
+            <a href="#pillars" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-pillars">Extracurriculares</span>
+                <span class="lg:hidden"><i class="ph-bold ph-star text-lg"></i></span>
             </a>
-            <a href="#contact" class="nav-item relative cursor-pointer text-sm font-semibold px-4 sm:px-6 py-2 rounded-full transition-colors text-gray-400 hover:text-primary">
-                <span class="hidden md:inline" data-i18n="nav-contact">Contato</span>
-                <span class="md:hidden"><i class="ph-bold ph-envelope-simple text-lg"></i></span>
+            <a href="#honors" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-honors">Conquistas</span>
+                <span class="lg:hidden"><i class="ph-bold ph-trophy text-lg"></i></span>
+            </a>
+            <a href="#impact" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-impact">Impacto Técnico</span>
+                <span class="lg:hidden"><i class="ph-bold ph-cpu text-lg"></i></span>
+            </a>
+            <a href="#skills" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-skills">Habilidades</span>
+                <span class="lg:hidden"><i class="ph-bold ph-lightning text-lg"></i></span>
+            </a>
+            <a href="#contact" class="nav-item relative cursor-pointer text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+                <span class="hidden lg:inline" data-i18n="nav-contact">Contato</span>
+                <span class="lg:hidden"><i class="ph-bold ph-envelope-simple text-lg"></i></span>
             </a>
 
             <!-- Lamp -->
@@ -418,421 +430,576 @@
 
     </section>
 
-    <!-- Quem Sou Eu -->
-    <section id="about" class="py-40 px-6 relative">
+    <!-- Quem Sou Eu & Academic Snapshot -->
+    <section id="about" class="py-32 md:py-40 px-6 relative">
         <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20">
                 <!-- Coluna de Imagem/Visual -->
-                <div class="relative reveal max-w-md mx-auto lg:mx-0">
-                    <div class="relative rounded-none overflow-hidden aspect-[4/5] z-10 border border-glass-border shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)]">
+                <div class="relative reveal max-w-sm mx-auto lg:mx-0 lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden aspect-[4/5] z-10 border border-glass-border shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)]">
                         <img src="./src/images/IMG_6852.jpg" alt="João Mayer"
                             class="w-full h-full object-cover object-[center_15%]"
                             fetchpriority="high" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-t from-void/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 p-4 glass-card rounded-xl border border-white/10 backdrop-blur-md">
+                            <span class="text-xs uppercase tracking-widest text-secondary font-bold" data-i18n="about-badge-role">Candidato Universitário & Líder</span>
+                            <h4 class="text-white font-display font-medium text-base">João Pedro Mayer</h4>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Coluna de Texto -->
-                <div class="reveal">
-                    <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-2" data-i18n="about-label">Quem sou eu?</h2>
-                    <h3 class="text-3xl md:text-4xl font-display font-light mb-6" data-i18n="about-title">Além de um Estudante</h3>
+                <div class="reveal lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="ph-bold ph-graduation-cap"></i>
+                        <span data-i18n="about-label">Perfil Acadêmico & Liderança</span>
+                    </div>
+                    <h3 class="text-3xl md:text-5xl font-display font-light mb-6 tracking-tight" data-i18n="about-title">Além de um Estudante: Líder e Construtor</h3>
 
-
-                    <div class="space-y-4 text-gray-400 leading-relaxed">
+                    <div class="space-y-4 text-gray-400 leading-relaxed text-base md:text-lg">
                         <p data-i18n="about-p1">
-                            Desde a infância, a pergunta de como transformar o mundo em um lugar melhor acendeu uma
-                            ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa e a
-                            comunicação é a ponte para a compreensão global.
+                            Desde a infância, a motivação de transformar o mundo em um lugar mais justo e eficiente acendeu uma ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa comunitária, empatia e compromisso com o coletivo.
                         </p>
                         <p data-i18n="about-p2">
-                            Através de 3 anos no Ensino Médio Técnico em Desenvolvimento de Sistemas. Vejo a tecnologia como a linguagem mais poderosa para construir soluções escaláveis. Quero me tornar um Líder e construtor focado em impacto. Esse é meu objetivo neste mundo.
+                            Formado com mérito acadêmico máximo no Ensino Médio Técnico em Desenvolvimento de Sistemas, vejo a tecnologia e o empreendedorismo como as linguagens mais poderosas para construir soluções escaláveis. Meu objetivo é liderar iniciativas globais de alto impacto com excelência e integridade.
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subseção: Academic Snapshot & Stats -->
+            <div class="reveal mt-16">
+                <div class="text-center md:text-left mb-8">
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold" data-i18n="stats-subtitle">Métricas & Rigor Acadêmico</span>
+                    <h4 class="text-2xl md:text-3xl font-display font-light text-white mt-1" data-i18n="stats-title">Academic Snapshot & Stats</h4>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Stat 1: GPA -->
+                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-primary relative group hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-primary/20 text-primary border border-primary/30" data-i18n="stat-gpa-tag">Top 1% Class</span>
+                            <i class="ph-fill ph-chart-line-up text-2xl text-primary"></i>
+                        </div>
+                        <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-2 tracking-tight">
+                            9.1 <span class="text-sm font-normal text-gray-400">/ 10.0</span>
+                        </div>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-gpa-title">GPA Acadêmico</h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-gpa-desc">CEEP Profª Naiana Babaresco de Souza — Formatura: 2025.</p>
+                    </div>
+
+                    <!-- Stat 2: SAT -->
+                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-secondary relative group hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-secondary/20 text-secondary border border-secondary/30" data-i18n="stat-sat-tag">Standardized Test</span>
+                            <i class="ph-fill ph-exam text-2xl text-secondary"></i>
+                        </div>
+                        <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-2 tracking-tight">
+                            1270
+                        </div>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-sat-title">SAT Score</h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-sat-desc">Comprovada proficiência analítica e capacidade acadêmica internacional.</p>
+                    </div>
+
+                    <!-- Stat 3: Class Rank -->
+                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-terciary relative group hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" data-i18n="stat-rank-tag">Valedictorian</span>
+                            <i class="ph-fill ph-medal text-2xl text-emerald-400"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-display font-bold text-white mb-2 tracking-tight" data-i18n="stat-rank-num">
+                            1º Lugar
+                        </div>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-rank-title">Class Rank & Distinção</h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-rank-desc">Maior Distinção Acadêmica entre 500+ estudantes (Turma de 2025).</p>
+                    </div>
+
+                    <!-- Stat 4: Elected Leadership -->
+                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-quaternary relative group hover:-translate-y-1 transition-all duration-300">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider uppercase bg-amber-500/20 text-amber-400 border border-amber-500/30" data-i18n="stat-leader-tag">Elected Leader</span>
+                            <i class="ph-fill ph-crown text-2xl text-amber-400"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-display font-bold text-white mb-2 tracking-tight" data-i18n="stat-leader-num">
+                            Presidente
+                        </div>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-leader-title">Grêmio Estudantil</h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-leader-desc">Gestão 2023–2025 liderando representação discente e projetos educacionais.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Minha Jornada (Timeline) -->
-    <section id="journey" class="py-40 px-6 relative border-t border-glass-border">
+    <!-- Minha Jornada de Liderança e Impacto (Timeline) -->
+    <section id="journey" class="py-32 md:py-40 px-6 relative border-t border-glass-border">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-20 reveal">
-                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2" data-i18n="journey-label">Trajetória</h2>
-                <h3 class="text-3xl md:text-5xl font-display font-light" data-i18n="journey-title">Jornada</h3>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="journey-desc">Os marcos que moldaram minha experiência,
-                    resiliência e autoridade.</p>
+                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2" data-i18n="journey-label">Trajetória e Impacto</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-light" data-i18n="journey-title">Minha Jornada de Liderança</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="journey-desc">Evolução contínua entre liderança institucional, mentoria comunitária e empreendedorismo social.</p>
             </div>
 
             <div class="relative">
                 <!-- Linha central degradê -->
-                <div
-                    class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary rounded-full">
-                </div>
+                <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-terciary rounded-full"></div>
 
                 <div class="space-y-12">
-                    <!-- Marco 1 -->
+                    <!-- Marco 1: Jogos de Solidariedade Campo Real (2023) -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
-                        <!-- Card -->
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div
-                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-vicentino-title">Raízes e Valores</h4>
-                                <span class="text-xs text-primary font-semibold tracking-wider uppercase block mb-3">Colégio
-                                    Vicentino</span>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-vicentino-desc">O Colégio Vicentino moldou meus valores pricipais, empatia, resiliência e responsabilidade.</p>
+                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-solidarity-badge">Jogos de Solidariedade Campo Real • 2023</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-solidarity-title">Raízes e Vocação Comunitária</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-solidarity-desc">Líder de equipe escolar no campeonato solidário entre 7 escolas. Coordenação logística de coleta e doação de alimentos e mais de 300 peças de agasalho para famílias em vulnerabilidade local. (1º Lugar geral).</p>
                             </div>
                         </div>
-                        <!-- Icone -->
-                        <div
-                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
-                            <i class="ph-fill ph-backpack text-xl"></i>
+                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                            <i class="ph-fill ph-hand-heart text-xl text-primary"></i>
                         </div>
-                        <!-- Espaço -->
                         <div class="hidden md:block md:w-[45%]"></div>
                     </div>
 
-                    <!-- Marco 2 -->
+                    <!-- Marco 2: Presidência do Grêmio Estudantil (2023 - 2025) -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
-                        <!-- Espaço -->
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <!-- Icone -->
-                        <div
-                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
-                            <i class="ph-fill ph-terminal-window text-xl"></i>
+                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
+                            <i class="ph-fill ph-users-three text-xl text-secondary"></i>
                         </div>
-                        <!-- Card -->
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div
-                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-ceep-title">Formação Técnica</h4>
-                                <span
-                                    class="text-xs text-secondary font-semibold tracking-wider uppercase block mb-3">CEEP</span>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-ceep-desc">Em 2022 ingressei no colégio técnico, eu não imaginava, mas ali conheci muito mais sobre minha principal ferramenta de construção, a tecnologia</p>
+                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-gremio-badge">Gestão Institucional • 2023–2025</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-gremio-title">Liderança Institucional Estudantil</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-gremio-desc">Eleito Presidente do Grêmio Estudantil do CEEP. Liderança de equipa na conceção e gestão de eventos escolares, mediação direta com a direção e representação estudantil de 500+ estudantes.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Marco 3 -->
+                    <!-- Marco 3: Embaixador SAEB / INEP (2025) -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
-                        <!-- Card -->
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div
-                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-dc-title">Primeiros Passos no Mercado</h4>
-                                <span class="text-xs text-primary font-semibold tracking-wider uppercase block mb-3">DC
-                                    Marketing</span>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-dc-desc">Enquanto isso, comecei minha jornada no mercado aos 15 anos, passei 2 anos como estagiário de marketing, absorvendo a
-                                    dinâmica de agência e entendendo como impulsionar marcas.</p>
+                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-saeb-badge">INEP / Governo Federal • 2025</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-saeb-title">Mobilização Educacional em Escala</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-saeb-desc">Selecionado entre mais de 200 alunos pelo INEP para mobilizar e mentorar diretamente mais de 40 colegas, através de palestras e orientação personalizada para o exame nacional SAEB.</p>
                             </div>
                         </div>
-                        <!-- Icone -->
-                        <div
-                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
-                            <i class="ph-fill ph-briefcase text-xl"></i>
+                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                            <i class="ph-fill ph-chalkboard-teacher text-xl text-primary"></i>
                         </div>
-                        <!-- Espaço -->
                         <div class="hidden md:block md:w-[45%]"></div>
                     </div>
 
-                    <!-- Marco 4 -->
+                    <!-- Marco 4: LALA (2026) -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
-                        <!-- Espaço -->
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <!-- Icone -->
-                        <div
-                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
-                            <i class="ph-fill ph-chart-line-up text-xl"></i>
+                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
+                            <i class="ph-fill ph-globe-hemisphere-west text-xl text-secondary"></i>
                         </div>
-                        <!-- Card -->
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div
-                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-ale-title">Gestão Estratégica</h4>
-                                <span
-                                    class="text-xs text-secondary font-semibold tracking-wider uppercase block mb-3">Clínica
-                                    Ale Zorzan</span>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-ale-desc">Após isso então, subi o nível, hoje em dia atuo como Gestor de Marketing. Responsável por
-                                    traduzir a excelência clínica em presença digital e resultados mensuráveis.</p>
+                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-lala-badge">Latin American Leadership Academy • 2026</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-lala-title">Imersão em Liderança Latino-Americana</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-lala-desc">Selecionado para o prestigiado bootcamp de liderança e impacto social da Latin American Leadership Academy. Desenvolveu e codificou o website oficial legado para documentar a trajetória da turma e preservar as memórias comunitárias.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Marco 5 -->
+                    <!-- Marco 5: Hectara (2025 - Presente) -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
-                        <!-- Card -->
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div
-                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-consultoria-title">Consultoria e Autoridade</h4>
-                                <span class="text-xs text-primary font-semibold tracking-wider uppercase block mb-3" data-i18n="journey-consultoria-badge">Uma paixão pelo Marketing</span>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-consultoria-desc">Com meus aprendizados, pessoas confiaram em mim para ajudá-las como consultor de Marketing, focado
-                                    em criar uma estratégia que realmente gera resultados para aqueles que confiam em mim.</p>
+                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-terciary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-hectara-badge">AgTech & Inteligência Artificial • 2025–Presente</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-hectara-title">Empreendedorismo e Soluções Tecnológicas</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-hectara-desc">Idealização e liderança de uma AgTech de IA para dados agrícolas (Co-Founder & CEO), validada através de pesquisa de campo intensiva com cooperativas rurais regionais.</p>
                             </div>
                         </div>
-                        <!-- Icone -->
-                        <div
-                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
-                            <i class="ph-fill ph-scales text-xl"></i>
+                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-terciary/50 text-white z-10 group-hover:scale-110 group-hover:border-terciary group-hover:shadow-[0_0_20px_rgba(5,122,85,0.6)] transition-all bg-void">
+                            <i class="ph-fill ph-plant text-xl text-emerald-400"></i>
                         </div>
-                        <!-- Espaço -->
                         <div class="hidden md:block md:w-[45%]"></div>
-                    </div>
-
-                    <!-- Marco 6 -->
-                    <div class="relative flex items-center md:justify-between w-full group reveal">
-                        <!-- Espaço -->
-                        <div class="hidden md:block md:w-[45%]"></div>
-                        <!-- Icone -->
-                        <div
-                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
-                            <i class="ph-fill ph-house-line text-xl"></i>
-                        </div>
-                        <!-- Card -->
-                        <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div
-                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-proximo-title">O Próximo Nível</h4>
-                                <span class="text-xs text-secondary font-semibold tracking-wider uppercase block mb-3">Real
-                                    Estate & Conversion</span>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-proximo-desc">Aproveitando minha experiência com UI/UX, estou trabalhando para começar a criar sites de alta conversão para imóveis, juntando um front-end impecável e uma tecnologia que faz com que os clientes possam andar pela casa pelo celular.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Pilares Extracurriculares (Extracurricular Pillars) -->
+    <section id="pillars" class="py-32 md:py-40 px-6 relative overflow-hidden border-t border-glass-border">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-2" data-i18n="pillars-label">Formação Holística</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="pillars-title">Pilares Extracurriculares</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="pillars-desc">A interseção entre disciplina de alto rendimento, experiência executiva no mercado e inovação tecnológica de impacto.</p>
+            </div>
 
-
-    <!-- Projetos -->
-    <section id="projects" class="py-40 px-4 md:px-12 lg:px-20">
-        <div class="w-full max-w-none">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
-                <div>
-                    <h3 class="text-3xl md:text-4xl font-display font-light" data-i18n="projects-title">Portfólio</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Atleta de Rendimento & Liderança Desportiva -->
+                <div class="reveal group relative rounded-2xl overflow-hidden min-h-[460px] flex flex-col justify-end p-8 border border-white/10 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-primary/50">
+                    <img src="./src/images/resiliencia.jpg" alt="Atleta de Rendimento" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30"></div>
+                    
+                    <div class="relative z-10 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded bg-purple-500/30 text-purple-200 border border-purple-400/40 text-xs font-bold" data-i18n="pillar-1-badge1">Capitão de Equipe</span>
+                            <span class="px-2.5 py-1 rounded bg-amber-500/30 text-amber-200 border border-amber-400/40 text-xs font-bold" data-i18n="pillar-1-badge2">8x Medalha de Ouro</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-medium text-white always-white" data-i18n="pillar-1-title">Atleta de Rendimento & Liderança Desportiva</h3>
+                        <p class="text-gray-200 always-white-text text-sm leading-relaxed" data-i18n="pillar-1-desc">
+                            Atleta federado/competitivo desde os 15 anos pela seleção de Laranjeiras do Sul (Alavolei). Capitão de equipa, 8x medalhista de ouro em torneios regionais/estaduais (2023–2026) e 2x finalista estadual. Foco em resiliência sob pressão, disciplina contínua e espírito coletivo.
+                        </p>
+                    </div>
                 </div>
-                <a href="https://github.com/ojoaomayer"
+
+                <!-- Card 2: Trajetória Profissional em Marketing Digital & Gestão -->
+                <div class="reveal group relative rounded-2xl overflow-hidden min-h-[460px] flex flex-col justify-end p-8 border border-white/10 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-secondary/50">
+                    <img src="./src/images/sentado.jpg" alt="Trajetória Profissional" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30"></div>
+                    
+                    <div class="relative z-10 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded bg-cyan-500/30 text-cyan-200 border border-cyan-400/40 text-xs font-bold" data-i18n="pillar-2-badge1">14+ Empresas Atendidas</span>
+                            <span class="px-2.5 py-1 rounded bg-blue-500/30 text-blue-200 border border-blue-400/40 text-xs font-bold" data-i18n="pillar-2-badge2">Gestão Estratégica</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-medium text-white always-white" data-i18n="pillar-2-title">Marketing Digital & Gestão Estratégica</h3>
+                        <p class="text-gray-200 always-white-text text-sm leading-relaxed" data-i18n="pillar-2-desc">
+                            De estagiário a gestor autônomo. Gestão de posicionamento digital e conversão para mais de 14 empresas, desenvolvendo automações, criação de websites de alto impacto, conteúdos multimídia e presença de mercado alinhada a resultados quantitativos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Inovação e Inteligência Artificial para o Agronegócio (Hectara) -->
+                <div class="reveal group relative rounded-2xl overflow-hidden min-h-[460px] flex flex-col justify-end p-8 border border-white/10 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-emerald-500/50">
+                    <img src="./src/images/hectara.png" alt="Inovação no Agronegócio" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40"></div>
+                    
+                    <div class="relative z-10 space-y-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded bg-emerald-500/30 text-emerald-200 border border-emerald-400/40 text-xs font-bold" data-i18n="pillar-3-badge1">Co-Founder & CEO</span>
+                            <span class="px-2.5 py-1 rounded bg-green-500/30 text-green-200 border border-green-400/40 text-xs font-bold" data-i18n="pillar-3-badge2">AgTech & IA</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-medium text-white always-white" data-i18n="pillar-3-title">Inovação e IA para o Agronegócio</h3>
+                        <p class="text-gray-200 always-white-text text-sm leading-relaxed" data-i18n="pillar-3-desc">
+                            Liderança de produto na Hectara, validação prática com produtores rurais e cooperativas regionais, e integração de inteligência computacional para resolver desafios econômicos e de produtividade no agronegócio nacional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honras & Conquistas (Academic Honors & Distinctions) -->
+    <section id="honors" class="py-32 md:py-40 px-6 relative border-t border-glass-border">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2" data-i18n="honors-label">Reconhecimento & Premiações</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="honors-title">Honras & Distinções Acadêmicas</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="honors-desc">Conquistas de excelência acadêmica, competições de tecnologia e campeonatos esportivos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Conquista 1: Ideathon SEBRAE -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card flex flex-col sm:flex-row gap-6 items-start border-l-4 border-l-amber-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl text-amber-400 shrink-0">
+                        🏆
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30" data-i18n="honor-1-tag">1º Lugar Regional</span>
+                            <span class="text-xs text-gray-400">2025</span>
+                        </div>
+                        <h4 class="text-xl font-display font-light text-white" data-i18n="honor-1-title">Ideathon SEBRAE</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="honor-1-desc">
+                            Vencedor em 1º lugar entre mais de 1.000 estudantes participantes com proposta inovadora de negócios e modelo de alta sustentabilidade.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Conquista 2: Maratona TECH -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card flex flex-col sm:flex-row gap-6 items-start border-l-4 border-l-cyan-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-3xl text-cyan-400 shrink-0">
+                        🥉
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30" data-i18n="honor-2-tag">Medalha de Bronze Nacional</span>
+                            <span class="text-xs text-gray-400">2025</span>
+                        </div>
+                        <h4 class="text-xl font-display font-light text-white" data-i18n="honor-2-title">Maratona TECH Nacional</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="honor-2-desc">
+                            Classificado entre os melhores do país entre mais de 1.000 concorrentes com pitch de projeto de Inteligência Artificial aplicada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Conquista 3: Highest Academic Distinction -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card flex flex-col sm:flex-row gap-6 items-start border-l-4 border-l-primary hover:bg-white/5 transition-all duration-300 reveal shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center text-3xl text-primary shrink-0">
+                        🎖️
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-primary/20 text-purple-300 border border-primary/30" data-i18n="honor-3-tag">Top 1 de 500+ Alunos</span>
+                            <span class="text-xs text-gray-400">2025</span>
+                        </div>
+                        <h4 class="text-xl font-display font-light text-white" data-i18n="honor-3-title">Highest Academic Distinction (CEEP)</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="honor-3-desc">
+                            Reconhecimento de mérito acadêmico máximo pelo CEEP entre 500+ estudantes, culminando com o maior GPA da instituição (9.1/10.0).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Conquista 4: Capitão & Campeão Esportivo -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card flex flex-col sm:flex-row gap-6 items-start border-l-4 border-l-emerald-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-3xl text-emerald-400 shrink-0">
+                        🏅
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="px-2.5 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" data-i18n="honor-4-tag">8x Campeão de Ouro</span>
+                            <span class="text-xs text-gray-400">2023–2026</span>
+                        </div>
+                        <h4 class="text-xl font-display font-light text-white" data-i18n="honor-4-title">Capitão & Campeão Esportivo Regional</h4>
+                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="honor-4-desc">
+                            8 medalhas de ouro e 2 finais estaduais pela seleção municipal e regional de voleibol, exercendo capitania e liderança contínua de equipe sob pressão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impacto Técnico e Projetos (Technical Impact) -->
+    <section id="impact" class="py-32 md:py-40 px-4 md:px-12 lg:px-20 border-t border-glass-border">
+        <div class="w-full max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div>
+                    <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-2" data-i18n="impact-label">Inovação & Engenharia</h2>
+                    <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="impact-title">Impacto Técnico & Projetos</h3>
+                </div>
+                <a href="https://github.com/ojoaomayer" target="_blank" rel="noopener noreferrer"
                     class="text-sm text-gray-400 hover:text-white mt-4 md:mt-0 flex items-center gap-1 group">
-                    Ver GitHub <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    <span data-i18n="impact-github">Ver Repositórios no GitHub</span> <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cards-container">
-
-                <!-- iAgro -->
-                <article
-                    class="glass-card rounded-none overflow-hidden relative group spotlight-card cursor-pointer reveal">
-                    <div class="h-48 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
-                        <img src="./src/images/hectara.png" alt="Projeto 3"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" decoding="async">
-                    </div>
-                    <div class="p-6 relative z-20">
-                        <div class="flex gap-2 mb-4">
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">UML</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30">Startup</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-yellow-500/20 text-yellow-400 border border-yellow-500/30">UX
-                                Design</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30">Leadership</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hectara -->
+                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative bg-black/40 flex items-center justify-center p-6">
+                            <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
+                            <img src="./src/images/hectara.png" alt="Hectara" class="max-h-36 object-contain group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async">
                         </div>
-                        <h4 class="text-xl font-display font-light mb-2 group-hover:text-secondary transition-colors" data-i18n="project-hectara-title">Hectara</h4>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="project-hectara-desc">Startup voltada ao agronegócio criada por mim e minha
-                            equipe, a ideia surgiu durante um ideathon em 2025, mas então foi reformulada e está em desenvolvimento atualmente.</p>
-                        <a href="https://app.iagrobrasil.com.br/"
-                            class="inline-flex items-center text-sm font-bold text-white hover:gap-2 transition-all">
-                            Em desenvolvimento <i class="ph-bold ph-arrow-right ml-1"></i>
-                        </a>
+                        <div class="p-6 relative z-20">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-300 border border-green-500/30">AgTech & IA</span>
+                                <span class="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">Co-Founder</span>
+                                <span class="text-xs px-2 py-1 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">Data Science</span>
+                            </div>
+                            <h4 class="text-xl font-display font-light mb-2 text-white group-hover:text-secondary transition-colors" data-i18n="project-hectara-title">Hectara</h4>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="project-hectara-desc">
+                                AgTech de inteligência de dados agrícolas para otimização de decisões no campo. Idealizada em ideathon e validada diretamente em pesquisa de campo com cooperativas e produtores rurais.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 relative z-20">
+                        <span class="inline-flex items-center text-xs font-bold text-emerald-400 gap-1">
+                            <i class="ph-bold ph-check-circle"></i> <span data-i18n="project-hectara-status">Em Validação & Desenvolvimento Ativo</span>
+                        </span>
                     </div>
                 </article>
 
-                <!-- TinWork -->
-                <article
-                    class="glass-card rounded-none overflow-hidden relative group spotlight-card cursor-pointer reveal">
-                    <div class="h-48 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
-                        <img src="./src/images/tinwork.png" alt="Projeto 1"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" decoding="async">
-                    </div>
-                    <div class="p-6 relative z-20">
-                        <div class="flex gap-2 mb-4">
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-primary/20 text-primary border border-primary/30">UML</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-secondary/20 text-secondary border border-secondary/30">UX
-                                Design</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30">Startup</span>
+                <!-- LALA Website Legado -->
+                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative bg-black/40">
+                            <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
+                            <img src="./src/images/global.jpg" alt="LALA Legacy Website" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async">
                         </div>
-                        <h4 class="text-xl font-display font-light mb-2 group-hover:text-secondary transition-colors" data-i18n="project-tinwork-title">TinWork</h4>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="project-tinwork-desc">Tinder do mercado de trabalho, primeira ideia de solução
-                            para jovens e estudantes que buscam entrar no mercado de trabalho e empresas que buscam
-                            talentos, com implementação de IA para ajudar os jovens e empresas, foi também minha primeira solução, que atualmente está em standby</p>
-                        <a class="inline-flex items-center text-sm font-bold text-white hover:gap-2 transition-all">
-                            Em desenvolvimento <i class="ph-bold ph-blueprint ml-1"></i>
-                        </a>
+                        <div class="p-6 relative z-20">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 rounded bg-primary/20 text-purple-300 border border-primary/30">Front-end</span>
+                                <span class="text-xs px-2 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">UI/UX</span>
+                                <span class="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">LALA 2026</span>
+                            </div>
+                            <h4 class="text-xl font-display font-light mb-2 text-white group-hover:text-secondary transition-colors" data-i18n="project-lala-title">Website Legado LALA</h4>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="project-lala-desc">
+                                Plataforma oficial desenvolvida e codificada por mim para documentar a trajetória, os projetos comunitários e as memórias da turma no bootcamp da Latin American Leadership Academy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 relative z-20">
+                        <span class="inline-flex items-center text-xs font-bold text-primary gap-1">
+                            <i class="ph-bold ph-globe"></i> <span data-i18n="project-lala-status">Desenvolvido & Entregue para a Comunidade</span>
+                        </span>
                     </div>
                 </article>
 
-                <!-- Reserva Aí -->
-                <article
-                    class="glass-card rounded-none overflow-hidden relative group spotlight-card cursor-pointer reveal">
-                    <div class="h-48 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
-                        <img src="./src/images/hotel.png" alt="Projeto 2"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                            loading="lazy" decoding="async">
-                    </div>
-                    <div class="p-6 relative z-20">
-                        <div class="flex gap-2 mb-4">
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-primary/20 text-primary border border-primary/30">HTML</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-secondary/20 text-secondary border border-secondary/30">CSS</span>
-                            <span
-                                class="text-xs px-2 py-1 rounded bg-green-500/20 text-green-400 border border-green-500/30">JavaScript</span>
+                <!-- TinWork & Reserva Aí -->
+                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 overflow-hidden relative bg-black/40">
+                            <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
+                            <img src="./src/images/tinwork.png" alt="TinWork & Reserva Aí" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async">
                         </div>
-                        <h4 class="text-xl font-display font-light mb-2 group-hover:text-secondary transition-colors" data-i18n="project-reserva-title">Reserva Aí</h4>
-                        <p class="text-gray-400 text-sm mb-4" data-i18n="project-reserva-desc">Site para gestão de hotéis, foi meu projeto de conclusão de curso
-                            no ensino médio, não colocado em prática, mas com o protótipo finalizado</p>
-                        <a href="https://github.com/AldohenriqueBS/tcc"
-                            class="inline-flex items-center text-sm font-bold text-white hover:gap-2 transition-all">
-                            Ver Detalhes <i class="ph-bold ph-arrow-right ml-1"></i>
+                        <div class="p-6 relative z-20">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">IA para Jovens</span>
+                                <span class="text-xs px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Prototipagem</span>
+                                <span class="text-xs px-2 py-1 rounded bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">TCC</span>
+                            </div>
+                            <h4 class="text-xl font-display font-light mb-2 text-white group-hover:text-secondary transition-colors" data-i18n="project-academic-title">Projetos Técnicos (TinWork / Reserva Aí)</h4>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="project-academic-desc">
+                                Soluções desenvolvidas durante a formação técnica: TinWork (marketplace inteligente conectando jovens e empresas com IA) e Reserva Aí (software de gestão hoteleira com protótipo finalizado).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 relative z-20">
+                        <a href="https://github.com/AldohenriqueBS/tcc" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center text-xs font-bold text-white hover:text-primary transition-colors gap-1">
+                            <span data-i18n="project-view-code">Ver Código Fonte</span> <i class="ph-bold ph-arrow-right"></i>
                         </a>
                     </div>
                 </article>
-
-
-            </div>
-
-            <!-- Seção de Estratégias de Mercado -->
-            <div class="mt-40 reveal relative">
-                <div class="text-center mb-12 relative z-10" id="market-title">
-                    <h3 class="text-3xl md:text-4xl font-display font-light" data-i18n="skills-title">Skills</h3>
-                    <p class="text-gray-400 mt-2" data-i18n="skills-desc">Unindo código e negócios para gerar impacto real.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="strategy-cards-container">
-                    <div
-                        class="glass-card p-6 rounded-none spotlight-card cursor-default group border-b-2 border-b-primary/40 hover:-translate-y-1 transition-transform">
-                        <i
-                            class="ph-fill ph-scales text-3xl text-primary mb-4 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="font-display font-light text-lg mb-2" data-i18n="skill-1-title">Gestão de Marketing</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="skill-1-desc">Gerenciamento de marketing com foco em resultados, muito além de um post ou vídeo bonito, uma estratégia alinhada aos objetivos da empresa aperfeiçoando a forma que a empresa se comunica</p>
-                    </div>
-                    <div
-                        class="glass-card p-6 rounded-none spotlight-card cursor-default group border-b-2 border-b-secondary/40 hover:-translate-y-1 transition-transform">
-                        <i
-                            class="ph-fill ph-buildings text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="font-display font-light text-lg mb-2" data-i18n="skill-2-title">UX/UI</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="skill-2-desc">Criação de Landing Pages de alta conversão para
-                            empresas, focando em se comunicar de maneira alinhada ao marketing, sendo uma peça fundamental para conversão</p>
-                    </div>
-                    <div
-                        class="glass-card p-6 rounded-none spotlight-card cursor-default group border-b-2 border-b-terciary/40 hover:-translate-y-1 transition-transform">
-                        <i
-                            class="ph-fill ph-target text-3xl text-terciary mb-4 group-hover:scale-110 transition-transform"></i>
-                        <h4 class="font-display font-light text-lg mb-2" data-i18n="skill-3-title">Liderança</h4>
-                        <p class="text-sm text-gray-400 leading-relaxed" data-i18n="skill-3-desc">Desde os 14 anos, começando por um livro de Daniel Goleman, estudo a liderança, uma softskill essêncial nos dias de hoje, e a peça chave para alcançar mais impacto e resultados</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Ambição / Futuro -->
-    <section id="ambition" class="py-40 px-6 relative overflow-hidden">
+    <!-- Habilidades Técnicas & Pessoais (Proficiencies) -->
+    <section id="skills" class="py-32 md:py-40 px-6 relative border-t border-glass-border">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2" data-i18n="skills-label">Competências & Ferramentas</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="skills-title">Proficiencies & Habilidades</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="skills-desc">Estrutura de proficiência técnica combinada a competências humanas e liderança orientada a impacto.</p>
+            </div>
 
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="text-center mb-20 reveal">
-                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Liderança -->
-                <div class="reveal group relative rounded-none overflow-hidden h-96 cursor-default transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                    <img src="./src/images/lideranca.jpg" alt="Liderança"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                        loading="lazy" decoding="async">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end h-full z-10">
-                        <h3 class="text-xl font-display font-light text-white always-white mb-2 transition-transform duration-300 group-hover:-translate-y-1" data-i18n="ambition-1-title">Liderança</h3>
-                        <p class="text-gray-300 always-white-text text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0" data-i18n="ambition-1-desc">
-                            Liderar equipes e projetos de grande impacto e promover um ambiente colaborativo e de alta performance. Acredito na liderança servidora, onde guiar e capacitar pessoas é a chave para transformar ideias em soluções reais e sustentáveis.
-                        </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Hard Skills & Domínios -->
+                <div class="glass-card p-8 rounded-2xl spotlight-card reveal border-t-2 border-t-secondary space-y-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/30 flex items-center justify-center text-secondary text-xl">
+                            <i class="ph-fill ph-code"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-white" data-i18n="skills-hard-title">Hard Skills & Domínios</h4>
+                            <span class="text-xs text-gray-400" data-i18n="skills-hard-subtitle">Conhecimento técnico aplicado e ferramentas digitais</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white font-medium">Digital Marketing & Estratégia de Conversão</span>
+                            <span class="text-secondary font-bold" data-i18n="level-advanced">Avançado</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full w-[95%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white font-medium">Ferramentas de Produtividade Digital (Notion, AI, Google Workspace)</span>
+                            <span class="text-secondary font-bold" data-i18n="level-advanced">Avançado</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full w-[90%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white font-medium">HTML5 & CSS3 / Web Development</span>
+                            <span class="text-secondary font-bold" data-i18n="level-intermediate">Intermediário</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full w-[80%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white font-medium">UX / UI Design (Figma & Wireframing)</span>
+                            <span class="text-secondary font-bold" data-i18n="level-intermediate">Intermediário</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full w-[75%]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white font-medium">Software Project Management & Metodologias Ágeis</span>
+                            <span class="text-secondary font-bold" data-i18n="level-basic">Básico</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full w-[65%]"></div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Resiliência -->
-                <div class="reveal group relative rounded-none overflow-hidden h-96 cursor-default transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                    <img src="./src/images/resiliencia.jpg" alt="Resiliência"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                        loading="lazy" decoding="async">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end h-full z-10">
-                        <h3 class="text-xl font-display font-light text-white always-white mb-2 transition-transform duration-300 group-hover:-translate-y-1" data-i18n="ambition-2-title">Resiliência</h3>
-                        <p class="text-gray-300 always-white-text text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0" data-i18n="ambition-2-desc">
-                            Atleta de vôlei há 4 anos, aprendi muito sobre resiliência sob pressão e sinergia de equipe. O esporte me ensinou a encarar desafios como oportunidades de aprendizado, a manter a cabeça fria nos momentos de crise e a persistir até alcançar o objetivo final.
-                        </p>
+                <!-- Core Competencies (Soft Skills) -->
+                <div class="glass-card p-8 rounded-2xl spotlight-card reveal border-t-2 border-t-primary space-y-6">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary text-xl">
+                            <i class="ph-fill ph-brain"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-white" data-i18n="skills-soft-title">Core Competencies</h4>
+                            <span class="text-xs text-gray-400" data-i18n="skills-soft-subtitle">Liderança, inteligência emocional e resolução de problemas</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Competency 1 -->
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary/40 transition-colors">
+                            <i class="ph-fill ph-users text-2xl text-primary mb-2"></i>
+                            <h5 class="text-white font-semibold text-sm mb-1" data-i18n="comp-1-title">Liderança Servidora</h5>
+                            <p class="text-xs text-gray-400" data-i18n="comp-1-desc">Capacidade comprovada em inspirar equipes, mediar conflitos e orientar pessoas.</p>
+                        </div>
+
+                        <!-- Competency 2 -->
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary/40 transition-colors">
+                            <i class="ph-fill ph-microphone-stage text-2xl text-primary mb-2"></i>
+                            <h5 class="text-white font-semibold text-sm mb-1" data-i18n="comp-2-title">Comunicação & Oratória</h5>
+                            <p class="text-xs text-gray-400" data-i18n="comp-2-desc">Apresentações públicas, palestras educacionais e articulação institucional clara.</p>
+                        </div>
+
+                        <!-- Competency 3 -->
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary/40 transition-colors">
+                            <i class="ph-fill ph-lightbulb text-2xl text-primary mb-2"></i>
+                            <h5 class="text-white font-semibold text-sm mb-1" data-i18n="comp-3-title">Problem-Solving</h5>
+                            <p class="text-xs text-gray-400" data-i18n="comp-3-desc">Análise crítica sob incerteza e desenvolvimento de soluções práticas para desafios complexos.</p>
+                        </div>
+
+                        <!-- Competency 4 -->
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-primary/40 transition-colors">
+                            <i class="ph-fill ph-compass text-2xl text-primary mb-2"></i>
+                            <h5 class="text-white font-semibold text-sm mb-1" data-i18n="comp-4-title">Organização Estratégica</h5>
+                            <p class="text-xs text-gray-400" data-i18n="comp-4-desc">Gestão disciplinada de prioridades, rigor na execução e busca incessante por excelência.</p>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Performance -->
-                <div class="reveal group relative rounded-none overflow-hidden h-96 cursor-default transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                    <img src="./src/images/performance.jpg" alt="Performance"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                        loading="lazy" decoding="async">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end h-full z-10">
-                        <h3 class="text-xl font-display font-light text-white always-white mb-2 transition-transform duration-300 group-hover:-translate-y-1" data-i18n="ambition-3-title">Performance</h3>
-                        <p class="text-gray-300 always-white-text text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0" data-i18n="ambition-3-desc">
-                            Excelência como hábito — mesma disciplina do esporte aplicada aos projetos. Busco a otimização contínua de processos, a qualidade técnica impecável e a entrega de resultados acima da média, mantendo o foco nos objetivos estratégicos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Inovação -->
-                <div class="reveal group relative rounded-none overflow-hidden h-96 cursor-default transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                    <img src="./src/images/inova.jpg" alt="Inovação"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                        loading="lazy" decoding="async">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end h-full z-10">
-                        <h3 class="text-xl font-display font-light text-white always-white mb-2 transition-transform duration-300 group-hover:-translate-y-1" data-i18n="ambition-4-title">Inovação</h3>
-                        <p class="text-gray-300 always-white-text text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0" data-i18n="ambition-4-desc">
-                            Pioneiro em novas ideias, revolucionando processos antigos para resolver problemas atuais. Utilizo a criatividade e a tecnologia de ponta para projetar soluções disruptivas e eficientes, que antecipam as necessidades do mercado.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Visão Global -->
-                <div class="reveal group relative rounded-none overflow-hidden h-96 cursor-default sm:col-span-2 lg:col-span-2 transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-                    <img src="./src/images/global.jpg" alt="Visão Global"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
-                        loading="lazy" decoding="async">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end h-full z-10">
-                        <h3 class="text-xl font-display font-light text-white always-white mb-2 transition-transform duration-300 group-hover:-translate-y-1" data-i18n="ambition-5-title">Visão Global</h3>
-                        <p class="text-gray-300 always-white-text text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0" data-i18n="ambition-5-desc">
-                            Através da The Dream School, desenvolvo projetos com impacto global além das fronteiras do Brasil. Entendo que os desafios modernos são interconectados, e busco criar pontes culturais e tecnológicas que gerem valor a nível internacional.
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
     <!-- Contato -->
-    <section id="contact" class="py-40 px-6 border-t border-white/5">
+    <section id="contact" class="py-32 md:py-40 px-6 border-t border-white/5">
         <div class="max-w-3xl mx-auto text-center reveal">
-            <h2 class="text-4xl font-display font-light mb-6" data-i18n="contact-title">Vamos construir algo incr\u00edvel?</h2>
-            <p class="text-gray-400 mb-10" data-i18n="contact-desc">
-                Estou sempre aberto a discutir novos projetos, oportunidades criativas ou apenas trocar uma ideia sobre
-                tecnologia ou o que vier na telha.
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+                <i class="ph-bold ph-envelope-open"></i>
+                <span data-i18n="contact-badge">Conexão & Oportunidades</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-display font-light mb-6 text-white" data-i18n="contact-title">Vamos construir algo incrível?</h2>
+            <p class="text-gray-400 mb-10 text-base md:text-lg leading-relaxed" data-i18n="contact-desc">
+                Aberto a diálogos com comitês de admissão, instituições educacionais, oportunidades de mentoria e projetos de impacto tecnológico.
             </p>
 
             <a href="https://wa.me/5542991667003"
@@ -842,13 +1009,13 @@
             </a>
 
             <div class="flex justify-center gap-8 mt-12">
-                <a href="https://github.com/ojoaomayer"
+                <a href="https://github.com/ojoaomayer" target="_blank" rel="noopener noreferrer"
                     class="text-gray-400 hover:text-white hover:scale-110 transition-all text-2xl"><i
                         class="ph-fill ph-github-logo"></i></a>
-                <a href="https://www.linkedin.com/in/joaomayer/"
+                <a href="https://www.linkedin.com/in/joaomayer/" target="_blank" rel="noopener noreferrer"
                     class="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all text-2xl"><i
                         class="ph-fill ph-linkedin-logo"></i></a>
-                <a href="https://www.instagram.com/ojoaomayer/"
+                <a href="https://www.instagram.com/ojoaomayer/" target="_blank" rel="noopener noreferrer"
                     class="text-gray-400 hover:text-pink-400 hover:scale-110 transition-all text-2xl"><i
                         class="ph-fill ph-instagram-logo"></i></a>
             </div>
@@ -856,7 +1023,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-gray-600 text-sm">
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-glass-border">
         <p>&copy; 2026 <span data-i18n="footer-dev">Desenvolvido por</span> @ojoaomayer <i class="ph-fill ph-rocket"></i></p>
     </footer>
 
@@ -871,6 +1038,7 @@
         function typeWriter() {
             clearTimeout(timer);
             const heading = document.getElementById("typewriter");
+            if (!heading) return;
             let word = words[i];
             let current = heading.innerHTML;
 
@@ -885,6 +1053,7 @@
         function erase() {
             clearTimeout(timer);
             const heading = document.getElementById("typewriter");
+            if (!heading) return;
             let current = heading.innerHTML;
 
             if (current.length > 0) {
@@ -895,9 +1064,6 @@
                 typeWriter();
             }
         }
-
-        // Iniciar digitação é feito pelo applyLanguage() no carregamento da página
-
 
         // 2. Efeito Spotlight nos Cards (Otimizado por Card)
         document.querySelectorAll(".spotlight-card").forEach(card => {
@@ -967,136 +1133,270 @@
         const translations = {
             pt: {
                 'nav-home': 'Início',
-                'nav-about': 'Sobre',
+                'nav-about': 'Sobre & Métricas',
                 'nav-journey': 'Jornada',
-                'nav-projects': 'Projetos',
+                'nav-pillars': 'Extracurriculares',
+                'nav-honors': 'Conquistas',
+                'nav-impact': 'Impacto Técnico',
+                'nav-skills': 'Habilidades',
                 'nav-contact': 'Contato',
                 'hero-badge': 'Bem-vindo ao meu universo digital',
                 'hero-title': 'Criando',
                 'hero-desc': 'Focado em tornar este mundo um lugar melhor, apaixonado por liderança, comunicação e tecnologia',
                 'hero-btn-projects': 'Ver Projetos',
                 'hero-btn-contact': 'Entrar em contato',
-                'about-label': 'Quem sou eu?',
-                'about-title': 'Além de um Estudante',
-                'about-p1': 'Desde a infância, a pergunta de como transformar o mundo em um lugar melhor acendeu uma ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa e a comunicação é a ponte para a compreensão global.',
-                'about-p2': 'Através de 3 anos no Ensino Médio Técnico em Desenvolvimento de Sistemas. Vejo a tecnologia como a linguagem mais poderosa para construir soluções escaláveis. Quero me tornar um Líder e construtor focado em impacto. Esse é meu objetivo neste mundo.',
-                'journey-label': 'Trajetória',
-                'journey-title': 'Jornada',
-                'journey-desc': 'Os marcos que moldaram minha experiência, resiliência e autoridade.',
-                'projects-title': 'Portfólio',
-                'ambition-title': 'Propósito',
+                
+                // About & Stats
+                'about-badge-role': 'Candidato Universitário & Líder',
+                'about-label': 'Perfil Acadêmico & Liderança',
+                'about-title': 'Além de um Estudante: Líder e Construtor',
+                'about-p1': 'Desde a infância, a motivação de transformar o mundo em um lugar mais justo e eficiente acendeu uma ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa comunitária, empatia e compromisso com o coletivo.',
+                'about-p2': 'Formado com mérito acadêmico máximo no Ensino Médio Técnico em Desenvolvimento de Sistemas, vejo a tecnologia e o empreendedorismo como as linguagens mais poderosas para construir soluções escaláveis. Meu objetivo é liderar iniciativas globais de alto impacto com excelência e integridade.',
+                'stats-subtitle': 'Métricas & Rigor Acadêmico',
+                'stats-title': 'Academic Snapshot & Stats',
+                'stat-gpa-tag': 'Top 1% Class',
+                'stat-gpa-title': 'GPA Acadêmico',
+                'stat-gpa-desc': 'CEEP Profª Naiana Babaresco de Souza — Formatura: 2025.',
+                'stat-sat-tag': 'Standardized Test',
+                'stat-sat-title': 'SAT Score',
+                'stat-sat-desc': 'Comprovada proficiência analítica e capacidade acadêmica internacional.',
+                'stat-rank-tag': 'Valedictorian',
+                'stat-rank-num': '1º Lugar',
+                'stat-rank-title': 'Class Rank & Distinção',
+                'stat-rank-desc': 'Maior Distinção Acadêmica entre 500+ estudantes (Turma de 2025).',
+                'stat-leader-tag': 'Elected Leader',
+                'stat-leader-num': 'Presidente',
+                'stat-leader-title': 'Grêmio Estudantil',
+                'stat-leader-desc': 'Gestão 2023–2025 liderando representação discente e projetos educacionais.',
+                
+                // Timeline
+                'journey-label': 'Trajetória e Impacto',
+                'journey-title': 'Minha Jornada de Liderança',
+                'journey-desc': 'Evolução contínua entre liderança institucional, mentoria comunitária e empreendedorismo social.',
+                'journey-solidarity-badge': 'Jogos de Solidariedade Campo Real • 2023',
+                'journey-solidarity-title': 'Raízes e Vocação Comunitária',
+                'journey-solidarity-desc': 'Líder de equipe escolar no campeonato solidário entre 7 escolas. Coordenação logística de coleta e doação de alimentos e mais de 300 peças de agasalho para famílias em vulnerabilidade local. (1º Lugar geral).',
+                'journey-gremio-badge': 'Gestão Institucional • 2023–2025',
+                'journey-gremio-title': 'Liderança Institucional Estudantil',
+                'journey-gremio-desc': 'Eleito Presidente do Grêmio Estudantil do CEEP. Liderança de equipa na conceção e gestão de eventos escolares, mediação direta com a direção e representação estudantil de 500+ estudantes.',
+                'journey-saeb-badge': 'INEP / Governo Federal • 2025',
+                'journey-saeb-title': 'Mobilização Educacional em Escala',
+                'journey-saeb-desc': 'Selecionado entre mais de 200 alunos pelo INEP para mobilizar e mentorar diretamente mais de 40 colegas, através de palestras e orientação personalizada para o exame nacional SAEB.',
+                'journey-lala-badge': 'Latin American Leadership Academy • 2026',
+                'journey-lala-title': 'Imersão em Liderança Latino-Americana',
+                'journey-lala-desc': 'Selecionado para o prestigiado bootcamp de liderança e impacto social da Latin American Leadership Academy. Desenvolveu e codificou o website oficial legado para documentar a trajetória da turma e preservar as memórias comunitárias.',
+                'journey-hectara-badge': 'AgTech & Inteligência Artificial • 2025–Presente',
+                'journey-hectara-title': 'Empreendedorismo e Soluções Tecnológicas',
+                'journey-hectara-desc': 'Idealização e liderança de uma AgTech de IA para dados agrícolas (Co-Founder & CEO), validada através de pesquisa de campo intensiva com cooperativas rurais regionais.',
+                
+                // Extracurricular Pillars
+                'pillars-label': 'Formação Holística',
+                'pillars-title': 'Pilares Extracurriculares',
+                'pillars-desc': 'A interseção entre disciplina de alto rendimento, experiência executiva no mercado e inovação tecnológica de impacto.',
+                'pillar-1-badge1': 'Capitão de Equipe',
+                'pillar-1-badge2': '8x Medalha de Ouro',
+                'pillar-1-title': 'Atleta de Rendimento & Liderança Desportiva',
+                'pillar-1-desc': 'Atleta federado/competitivo desde os 15 anos pela seleção de Laranjeiras do Sul (Alavolei). Capitão de equipa, 8x medalhista de ouro em torneios regionais/estaduais (2023–2026) e 2x finalista estadual. Foco em resiliência sob pressão, disciplina contínua e espírito coletivo.',
+                'pillar-2-badge1': '14+ Empresas Atendidas',
+                'pillar-2-badge2': 'Gestão Estratégica',
+                'pillar-2-title': 'Marketing Digital & Gestão Estratégica',
+                'pillar-2-desc': 'De estagiário a gestor autônomo. Gestão de posicionamento digital e conversão para mais de 14 empresas, desenvolvendo automações, criação de websites de alto impacto, conteúdos multimídia e presença de mercado alinhada a resultados quantitativos.',
+                'pillar-3-badge1': 'Co-Founder & CEO',
+                'pillar-3-badge2': 'AgTech & IA',
+                'pillar-3-title': 'Inovação e IA para o Agronegócio',
+                'pillar-3-desc': 'Liderança de produto na Hectara, validação prática com produtores rurais e cooperativas regionais, e integração de inteligência computacional para resolver desafios econômicos e de produtividade no agronegócio nacional.',
+                
+                // Academic Honors
+                'honors-label': 'Reconhecimento & Premiações',
+                'honors-title': 'Honras & Distinções Acadêmicas',
+                'honors-desc': 'Conquistas de excelência acadêmica, competições de tecnologia e campeonatos esportivos.',
+                'honor-1-tag': '1º Lugar Regional',
+                'honor-1-title': 'Ideathon SEBRAE (2025)',
+                'honor-1-desc': 'Vencedor em 1º lugar entre mais de 1.000 estudantes participantes com proposta inovadora de negócios e modelo de alta sustentabilidade.',
+                'honor-2-tag': 'Medalha de Bronze Nacional',
+                'honor-2-title': 'Maratona TECH Nacional (2025)',
+                'honor-2-desc': 'Classificado entre os melhores do país entre mais de 1.000 concorrentes com pitch de projeto de Inteligência Artificial aplicada.',
+                'honor-3-tag': 'Top 1 de 500+ Alunos',
+                'honor-3-title': 'Highest Academic Distinction (2025)',
+                'honor-3-desc': 'Reconhecimento de mérito acadêmico máximo pelo CEEP entre 500+ estudantes, culminando com o maior GPA da instituição (9.1/10.0).',
+                'honor-4-tag': '8x Campeão de Ouro',
+                'honor-4-title': 'Capitão & Campeão Esportivo (2023–2026)',
+                'honor-4-desc': '8 medalhas de ouro e 2 finais estaduais pela seleção municipal e regional de voleibol, exercendo capitania e liderança contínua de equipe sob pressão.',
+                
+                // Technical Impact
+                'impact-label': 'Inovação & Engenharia',
+                'impact-title': 'Impacto Técnico & Projetos',
+                'impact-github': 'Ver Repositórios no GitHub',
+                'project-hectara-title': 'Hectara',
+                'project-hectara-desc': 'AgTech de inteligência de dados agrícolas para otimização de decisões no campo. Idealizada em ideathon e validada diretamente em pesquisa de campo com cooperativas e produtores rurais.',
+                'project-hectara-status': 'Em Validação & Desenvolvimento Ativo',
+                'project-lala-title': 'Website Legado LALA',
+                'project-lala-desc': 'Plataforma oficial desenvolvida e codificada por mim para documentar a trajetória, os projetos comunitários e as memórias da turma no bootcamp da Latin American Leadership Academy.',
+                'project-lala-status': 'Desenvolvido & Entregue para a Comunidade',
+                'project-academic-title': 'Projetos Técnicos (TinWork / Reserva Aí)',
+                'project-academic-desc': 'Soluções desenvolvidas durante a formação técnica: TinWork (marketplace inteligente conectando jovens e empresas com IA) e Reserva Aí (software de gestão hoteleira com protótipo finalizado).',
+                'project-view-code': 'Ver Código Fonte',
+                
+                // Skills
+                'skills-label': 'Competências & Ferramentas',
+                'skills-title': 'Proficiencies & Habilidades',
+                'skills-desc': 'Estrutura de proficiência técnica combinada a competências humanas e liderança orientada a impacto.',
+                'skills-hard-title': 'Hard Skills & Domínios',
+                'skills-hard-subtitle': 'Conhecimento técnico aplicado e ferramentas digitais',
+                'skills-soft-title': 'Core Competencies',
+                'skills-soft-subtitle': 'Liderança, inteligência emocional e resolução de problemas',
+                'level-advanced': 'Avançado',
+                'level-intermediate': 'Intermediário',
+                'level-basic': 'Básico',
+                'comp-1-title': 'Liderança Servidora',
+                'comp-1-desc': 'Capacidade comprovada em inspirar equipes, mediar conflitos e orientar pessoas.',
+                'comp-2-title': 'Comunicação & Oratória',
+                'comp-2-desc': 'Apresentações públicas, palestras educacionais e articulação institucional clara.',
+                'comp-3-title': 'Problem-Solving',
+                'comp-3-desc': 'Análise crítica sob incerteza e desenvolvimento de soluções práticas para desafios complexos.',
+                'comp-4-title': 'Organização Estratégica',
+                'comp-4-desc': 'Gestão disciplinada de prioridades, rigor na execução e busca incessante por excelência.',
+                
+                // Contact & Footer
+                'contact-badge': 'Conexão & Oportunidades',
                 'contact-title': 'Vamos construir algo incrível?',
-                'contact-desc': 'Estou sempre aberto a discutir novos projetos, oportunidades criativas ou apenas trocar uma ideia sobre tecnologia ou o que vier na telha.',
+                'contact-desc': 'Aberto a diálogos com comitês de admissão, instituições educacionais, oportunidades de mentoria e projetos de impacto tecnológico.',
                 'contact-btn': 'Entre em Contato',
                 'typewriter-words': ['Futuro.', 'Inovação.', 'Impacto.'],
-                'journey-vicentino-title': `Raízes e Valores`,
-                'journey-vicentino-desc': `O Colégio Vicentino moldou meus valores pricipais, empatia, resiliência e responsabilidade.`,
-                'journey-ceep-title': `Formação Técnica`,
-                'journey-ceep-desc': `Em 2022 ingressei no colégio técnico, eu não imaginava, mas ali conheci muito mais sobre minha principal ferramenta de construção, a tecnologia`,
-                'journey-dc-title': `Primeiros Passos no Mercado`,
-                'journey-dc-desc': `Enquanto isso, comecei minha jornada no mercado aos 15 anos, passei 2 anos como estagiário de marketing, absorvendo a dinâmica de agência e entendendo como impulsionar marcas.`,
-                'journey-ale-title': `Gestão Estratégica`,
-                'journey-ale-desc': `Após isso então, subi o nível, hoje em dia atuo como Gestor de Marketing. Responsável por traduzir a excelência clínica em presença digital e resultados mensuráveis.`,
-                'journey-consultoria-title': `Consultoria e Autoridade`,
-                'journey-consultoria-badge': `Uma paixão pelo Marketing`,
-                'journey-consultoria-desc': `Com meus aprendizados, pessoas confiaram em mim para ajudá-las como consultor de Marketing, focado em criar uma estratégia que realmente gera resultados para aqueles que confiam em mim.`,
-                'journey-proximo-title': `O Próximo Nível`,
-                'journey-proximo-desc': `Aproveitando minha experiência com UI/UX, estou trabalhando para começar a criar sites de alta conversão para imóveis, juntando um front-end impecável e uma tecnologia que faz com que os clientes possam andar pela casa pelo celular.`,
-                'project-hectara-title': `Hectara`,
-                'project-hectara-desc': `Startup voltada ao agronegócio criada por mim e minha equipe, a ideia surgiu durante um ideathon em 2025, mas então foi reformulada e está em desenvolvimento atualmente.`,
-                'project-tinwork-title': `TinWork`,
-                'project-tinwork-desc': `Tinder do mercado de trabalho, primeira ideia de solução para jovens e estudantes que buscam entrar no mercado de trabalho e empresas que buscam talentos, com implementação de IA para ajudar os jovens e empresas, foi também minha primeira solução, que atualmente está em standby`,
-                'project-reserva-title': `Reserva Aí`,
-                'project-reserva-desc': `Site para gestão de hotéis, foi meu projeto de conclusão de curso no ensino médio, não colocado em prática, mas com o protótipo finalizado`,
-                'skills-title': `Skills`,
-                'skills-desc': `Unindo código e negócios para gerar impacto real.`,
-                'skill-1-title': `Gestão de Marketing`,
-                'skill-1-desc': `Gerenciamento de marketing com foco em resultados, muito além de um post ou vídeo bonito, uma estratégia alinhada aos objetivos da empresa aperfeiçoando a forma que a empresa se comunica`,
-                'skill-2-title': `UX/UI`,
-                'skill-2-desc': `Criação de Landing Pages de alta conversão para empresas, focando em se comunicar de maneira alinhada ao marketing, sendo uma peça fundamental para conversão`,
-                'skill-3-title': `Liderança`,
-                'skill-3-desc': `Desde os 14 anos, começando por um livro de Daniel Goleman, estudo a liderança, uma softskill essêncial nos dias de hoje, e a peça chave para alcançar mais impacto e resultados`,
-                'ambition-1-title': `Liderança`,
-                'ambition-1-desc': `Liderar equipes e projetos de grande impacto e promover um ambiente colaborativo e de alta performance. Acredito na liderança servidora, onde guiar e capacitar pessoas é a chave para transformar ideias em soluções reais e sustentáveis.`,
-                'ambition-2-title': `Resiliência`,
-                'ambition-2-desc': `Atleta de vôlei há 4 anos, aprendi muito sobre resiliência sob pressão e sinergia de equipe. O esporte me ensinou a encarar desafios como oportunidades de aprendizado, a manter a cabeça fria nos momentos de crise e a persistir até alcançar o objetivo final.`,
-                'ambition-3-title': `Performance`,
-                'ambition-3-desc': `Excelência como hábito — mesma disciplina do esporte aplicada aos projetos. Busco a otimização contínua de processos, a qualidade técnica impecável e a entrega de resultados acima da média, mantendo o foco nos objetivos estratégicos.`,
-                'ambition-4-title': `Inovação`,
-                'ambition-4-desc': `Pioneiro em novas ideias, revolucionando processos antigos para resolver problemas atuais. Utilizo a criatividade e a tecnologia de ponta para projetar soluções disruptivas e eficientes, que antecipam as necessidades do mercado.`,
-                'ambition-5-title': `Visão Global`,
-                'ambition-5-desc': `Através da The Dream School, desenvolvo projetos com impacto global além das fronteiras do Brasil. Entendo que os desafios modernos são interconectados, e busco criar pontes culturais e tecnológicas que gerem valor a nível internacional.`,
-                'project-dev-badge': 'Em desenvolvimento',
-                'project-view-details': 'Ver Detalhes',
                 'footer-dev': 'Desenvolvido por',
             },
             en: {
                 'nav-home': 'Home',
-                'nav-about': 'About',
+                'nav-about': 'About & Stats',
                 'nav-journey': 'Journey',
-                'nav-projects': 'Projects',
-                'nav-ambition': 'Ambition',
+                'nav-pillars': 'Extracurriculars',
+                'nav-honors': 'Honors',
+                'nav-impact': 'Technical Impact',
+                'nav-skills': 'Proficiencies',
                 'nav-contact': 'Contact',
                 'hero-badge': 'Welcome to my digital universe',
                 'hero-title': 'Building',
                 'hero-desc': 'Focused on making this world a better place, passionate about leadership, communication and technology',
                 'hero-btn-projects': 'View Projects',
                 'hero-btn-contact': 'Get in touch',
-                'about-label': 'Who am I?',
-                'about-title': 'Beyond a Student',
-                'about-p1': 'Since childhood, the question of how to transform the world into a better place ignited an undeniable ambition. I discovered early that true leadership acts on initiative and communication is the bridge to global understanding.',
-                'about-p2': 'Through 3 years of Technical High School in Systems Development. I see technology as the most powerful language to build scalable solutions. I want to become a Leader and builder focused on impact. That is my goal in this world.',
-                'journey-label': 'Timeline',
-                'journey-title': 'My Journey',
-                'journey-desc': 'The milestones that shaped my experience, resilience and authority.',
-                'projects-label': 'Portfolio',
-                'projects-title': 'Recent Work',
-                'ambition-label': 'Values & Purpose',
-                'ambition-title': 'My Ambition',
-                'ambition-desc': 'Where I want to go and the legacy I want to build.',
+                
+                // About & Stats
+                'about-badge-role': 'University Applicant & Leader',
+                'about-label': 'Academic & Leadership Profile',
+                'about-title': 'Beyond a Student: Leader & Builder',
+                'about-p1': 'Since childhood, the drive to make the world more equitable and efficient ignited an undeniable ambition. I discovered early that true leadership stems from community initiative, empathy, and collective commitment.',
+                'about-p2': 'Graduated with highest academic distinction in Technical High School in Systems Development, I see technology and entrepreneurship as the most powerful languages to build scalable solutions. My goal is to lead high-impact global initiatives with excellence and integrity.',
+                'stats-subtitle': 'Metrics & Academic Rigor',
+                'stats-title': 'Academic Snapshot & Stats',
+                'stat-gpa-tag': 'Top 1% Class',
+                'stat-gpa-title': 'Academic GPA',
+                'stat-gpa-desc': 'CEEP Profª Naiana Babaresco de Souza — Graduation: 2025.',
+                'stat-sat-tag': 'Standardized Test',
+                'stat-sat-title': 'SAT Score',
+                'stat-sat-desc': 'Demonstrated analytical rigor and international academic readiness.',
+                'stat-rank-tag': 'Valedictorian',
+                'stat-rank-num': 'Rank 1st',
+                'stat-rank-title': 'Class Rank & Distinction',
+                'stat-rank-desc': 'Highest Academic Distinction among 500+ students (Class of 2025).',
+                'stat-leader-tag': 'Elected Leader',
+                'stat-leader-num': 'President',
+                'stat-leader-title': 'Student Government',
+                'stat-leader-desc': '2023–2025 tenure leading student representation and schoolwide initiatives.',
+                
+                // Timeline
+                'journey-label': 'Trajectory & Impact',
+                'journey-title': 'My Leadership Journey',
+                'journey-desc': 'Continuous trajectory spanning institutional governance, community mentorship, and social tech ventures.',
+                'journey-solidarity-badge': 'Campo Real Solidarity Games • 2023',
+                'journey-solidarity-title': 'Roots & Community Service',
+                'journey-solidarity-desc': 'School team leader in a solidarity championship across 7 schools. Coordinated logistics for food and over 300 warm clothes donations for local vulnerable families. (1st Place overall).',
+                'journey-gremio-badge': 'Institutional Governance • 2023–2025',
+                'journey-gremio-title': 'Elected Student Body Leadership',
+                'journey-gremio-desc': 'Elected President of CEEP Student Government. Led team in planning and executing school events, direct mediation with board of directors, and representing 500+ students.',
+                'journey-saeb-badge': 'INEP / Federal Ministry of Education • 2025',
+                'journey-saeb-title': 'Educational Mobilization at Scale',
+                'journey-saeb-desc': 'Selected among 200+ students by INEP to mobilize and directly mentor 40+ peers through workshops and personalized coaching for the national SAEB examination.',
+                'journey-lala-badge': 'Latin American Leadership Academy • 2026',
+                'journey-lala-title': 'Latin American Leadership Immersion',
+                'journey-lala-desc': 'Selected for the prestigious leadership and social impact bootcamp by Latin American Leadership Academy. Developed and coded the official legacy website to document cohort milestones and preserve community memories.',
+                'journey-hectara-badge': 'AgTech & Artificial Intelligence • 2025–Present',
+                'journey-hectara-title': 'Entrepreneurship & Tech Solutions',
+                'journey-hectara-desc': 'Conception and leadership of an agricultural data AI startup (Co-Founder & CEO), validated through extensive field research with regional agricultural cooperatives.',
+                
+                // Extracurricular Pillars
+                'pillars-label': 'Holistic Development',
+                'pillars-title': 'Extracurricular Pillars',
+                'pillars-desc': 'The intersection of athletic discipline, market executive experience, and high-impact tech innovation.',
+                'pillar-1-badge1': 'Team Captain',
+                'pillar-1-badge2': '8x Gold Medalist',
+                'pillar-1-title': 'Athletic Excellence & Sports Leadership',
+                'pillar-1-desc': 'Federated/competitive volleyball athlete since age 15 for the Laranjeiras do Sul squad (Alavolei). Team Captain, 8x gold medalist in regional/state tournaments (2023–2026) and 2x state finalist. Focus on resilience under pressure, continuous discipline, and team synergy.',
+                'pillar-2-badge1': '14+ Companies Managed',
+                'pillar-2-badge2': 'Strategic Management',
+                'pillar-2-title': 'Digital Marketing & Growth Management',
+                'pillar-2-desc': 'From marketing intern to autonomous manager. Managed digital positioning and conversion for 14+ businesses, engineering automations, building high-conversion websites, multimedia content, and search presence focused on measurable ROI.',
+                'pillar-3-badge1': 'Co-Founder & CEO',
+                'pillar-3-badge2': 'AgTech & AI',
+                'pillar-3-title': 'AgTech Innovation & AI Solutions',
+                'pillar-3-desc': 'Product leadership at Hectara, conducting field research with real farmers and regional cooperatives, integrating computational intelligence to solve economic and productivity bottlenecks in agribusiness.',
+                
+                // Academic Honors
+                'honors-label': 'Recognition & Awards',
+                'honors-title': 'Academic Honors & Distinctions',
+                'honors-desc': 'Recognitions across academic excellence, national technology hackathons, and athletic championships.',
+                'honor-1-tag': '1st Place Regional',
+                'honor-1-title': 'SEBRAE Ideathon (2025)',
+                'honor-1-desc': '1st place winner among 1,000+ participating students with an innovative business pitch and scalable sustainable model.',
+                'honor-2-tag': 'National Bronze Medal',
+                'honor-2-title': 'National TECH Marathon (2025)',
+                'honor-2-desc': 'Ranked among top nationwide finalists among 1,000+ competitors with an applied Artificial Intelligence project pitch.',
+                'honor-3-tag': 'Top 1 of 500+ Students',
+                'honor-3-title': 'Highest Academic Distinction (2025)',
+                'honor-3-desc': 'Maximum academic merit recognition by CEEP among 500+ graduating students, achieving the top GPA (9.1/10.0).',
+                'honor-4-tag': '8x Gold Champion',
+                'honor-4-title': 'Team Captain & Sports Champion (2023–2026)',
+                'honor-4-desc': '8 gold medals and 2 state finals for the municipal and regional volleyball team, exercising sustained team captaincy under pressure.',
+                
+                // Technical Impact
+                'impact-label': 'Innovation & Engineering',
+                'impact-title': 'Technical Impact & Projects',
+                'impact-github': 'View Repositories on GitHub',
+                'project-hectara-title': 'Hectara',
+                'project-hectara-desc': 'AgTech data intelligence platform optimizing crop decision-making. Originated in an ideathon and validated through direct field research with farmers and agricultural cooperatives.',
+                'project-hectara-status': 'In Active Validation & Development',
+                'project-lala-title': 'LALA Legacy Website',
+                'project-lala-desc': 'Official community platform designed and coded by me to preserve cohort projects, memories, and social initiatives for the Latin American Leadership Academy.',
+                'project-lala-status': 'Deployed & Delivered to the Community',
+                'project-academic-title': 'Technical Projects (TinWork / Reserva Aí)',
+                'project-academic-desc': 'Projects built during technical education: TinWork (AI-driven student job marketplace) and Reserva Aí (hotel management system with finished prototype).',
+                'project-view-code': 'View Source Code',
+                
+                // Skills
+                'skills-label': 'Competencies & Tooling',
+                'skills-title': 'Proficiencies & Competencies',
+                'skills-desc': 'Technical proficiency combined with human competencies and impact-driven leadership.',
+                'skills-hard-title': 'Hard Skills & Domains',
+                'skills-hard-subtitle': 'Applied technical expertise and digital tools',
+                'skills-soft-title': 'Core Competencies',
+                'skills-soft-subtitle': 'Leadership, emotional intelligence, and problem solving',
+                'level-advanced': 'Advanced',
+                'level-intermediate': 'Intermediate',
+                'level-basic': 'Basic',
+                'comp-1-title': 'Servant Leadership',
+                'comp-1-desc': 'Demonstrated ability to inspire high-performance teams, mediate conflicts, and mentor peers.',
+                'comp-2-title': 'Communication & Public Speaking',
+                'comp-2-desc': 'Public addresses, educational workshops, and clear institutional articulation.',
+                'comp-3-title': 'Problem-Solving',
+                'comp-3-desc': 'Critical analysis under uncertainty and crafting actionable solutions for complex challenges.',
+                'comp-4-title': 'Strategic Organization',
+                'comp-4-desc': 'Disciplined prioritization, rigorous execution, and uncompromising commitment to excellence.',
+                
+                // Contact & Footer
+                'contact-badge': 'Connection & Opportunities',
                 'contact-title': "Let's build something amazing?",
-                'contact-desc': 'I am always open to discussing new projects, creative opportunities or just chatting about technology.',
+                'contact-desc': 'Open to discussions with admissions committees, educational institutions, mentorship opportunities, and tech impact ventures.',
                 'contact-btn': 'Get in Touch',
                 'typewriter-words': ['Future.', 'Innovation.', 'Impact.'],
-                'journey-vicentino-title': `Roots and Values`,
-                'journey-vicentino-desc': `The Colégio Vicentino shaped my core values: empathy, resilience, and responsibility.`,
-                'journey-ceep-title': `Technical Education`,
-                'journey-ceep-desc': `In 2022 I joined the technical high school, I didn't imagine it, but there I learned much more about my main building tool, technology`,
-                'journey-dc-title': `First Steps in the Market`,
-                'journey-dc-desc': `Meanwhile, I started my journey in the market at 15 years old, spent 2 years as a marketing intern, absorbing the agency dynamic and understanding how to boost brands.`,
-                'journey-ale-title': `Strategic Management`,
-                'journey-ale-desc': `After that, I leveled up, nowadays I work as a Marketing Manager. Responsible for translating clinical excellence into digital presence and measurable results.`,
-                'journey-consultoria-title': `Consultancy and Authority`,
-                'journey-consultoria-badge': `A passion for Marketing`,
-                'journey-consultoria-desc': `With my learnings, people trusted me to help them as a Marketing consultant, focused on creating a strategy that really generates results for those who trust me.`,
-                'journey-proximo-title': `The Next Level`,
-                'journey-proximo-desc': `Leveraging my experience with UI/UX, I am working to start creating high-conversion websites for real estate, combining an impeccable front-end and a technology that allows clients to walk through the house on their cell phones.`,
-                'project-hectara-title': `Hectara`,
-                'project-hectara-desc': `Agribusiness startup created by me and my team, the idea emerged during an ideathon in 2025, but was then reformulated and is currently in development.`,
-                'project-tinwork-title': `TinWork`,
-                'project-tinwork-desc': `Job market Tinder, first solution idea for youth and students seeking to enter the job market and companies seeking talent, with AI implementation to help youth and companies, it was also my first solution, which is currently on standby`,
-                'project-reserva-title': `Reserva Aí`,
-                'project-reserva-desc': `Hotel management website, it was my high school graduation project, not put into practice, but with the prototype finished`,
-                'skills-title': `Skills`,
-                'skills-desc': `Uniting code and business to generate real impact.`,
-                'skill-1-title': `Marketing Management`,
-                'skill-1-desc': `Marketing management focused on results, far beyond a pretty post or video, a strategy aligned with company objectives perfecting how the company communicates`,
-                'skill-2-title': `UX/UI`,
-                'skill-2-desc': `Creation of high-conversion Landing Pages for companies, focusing on communicating in a way aligned with marketing, being a fundamental piece for conversion`,
-                'skill-3-title': `Leadership`,
-                'skill-3-desc': `Since I was 14, starting with a book by Daniel Goleman, I study leadership, an essential soft skill nowadays, and the key piece to achieve more impact and results`,
-                'ambition-1-title': `Leadership`,
-                'ambition-1-desc': `Lead teams and high-impact projects and promote a collaborative and high-performance environment. I believe in servant leadership, where guiding and empowering people is the key to transform ideas into real and sustainable solutions.`,
-                'ambition-2-title': `Resilience`,
-                'ambition-2-desc': `Volleyball athlete for 4 years, I learned a lot about resilience under pressure and team synergy. The sport taught me to face challenges as learning opportunities, to keep a cool head in moments of crisis, and to persist until reaching the final goal.`,
-                'ambition-3-title': `Performance`,
-                'ambition-3-desc': `Excellence as a habit — same sports discipline applied to projects. I seek continuous process optimization, impeccable technical quality, and the delivery of above-average results, keeping focus on strategic objectives.`,
-                'ambition-4-title': `Innovation`,
-                'ambition-4-desc': `Pioneer in new ideas, revolutionizing old processes to solve current problems. I use creativity and cutting-edge technology to design disruptive and efficient solutions that anticipate market needs.`,
-                'ambition-5-title': `Global Vision`,
-                'ambition-5-desc': `Through The Dream School, I develop projects with global impact beyond the borders of Brazil. I understand that modern challenges are interconnected, and I seek to create cultural and technological bridges that generate value on an international level.`,
-                'project-dev-badge': 'In development',
-                'project-view-details': 'View Details',
                 'footer-dev': 'Developed by',
             }
         };
