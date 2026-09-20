@@ -427,13 +427,13 @@
 
             <div class="flex flex-col sm:flex-row gap-4 justify-start animate-fade-in-up"
                 style="animation-delay: 0.3s;">
-                <a href="#projects"
+                <a href="#impact"
                     class="px-8 py-4 rounded-full bg-white text-black font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">
-                    Ver Projetos <i class="ph-bold ph-arrow-right"></i>
+                    <span data-i18n="hero-btn-projects">Ver Projetos</span> <i class="ph-bold ph-arrow-right"></i>
                 </a>
                 <a href="#contact"
                     class="px-8 py-4 rounded-full glass-card text-white font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
-                    Entrar em contato
+                    <span data-i18n="hero-btn-contact">Entrar em contato</span>
                 </a>
             </div>
         </div>
@@ -1000,7 +1000,7 @@
                     <div class="space-y-4 text-sm">
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium">Digital Marketing & Growth</span>
+                                <span class="text-white font-medium" data-i18n="skill-1-name">Marketing Digital & Growth</span>
                                 <span class="text-secondary font-bold text-xs" data-i18n="level-advanced">Avançado</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -1010,7 +1010,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium">Digital Productivity Tools (Notion, AI, Google)</span>
+                                <span class="text-white font-medium" data-i18n="skill-2-name">Ferramentas de Produtividade (Notion, IA, Google)</span>
                                 <span class="text-secondary font-bold text-xs" data-i18n="level-advanced">Avançado</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -1020,7 +1020,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium">HTML5 & CSS3</span>
+                                <span class="text-white font-medium" data-i18n="skill-3-name">HTML5 & CSS3</span>
                                 <span class="text-secondary font-bold text-xs" data-i18n="level-intermediate">Intermediário</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -1030,7 +1030,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium">UX / UI Design (Figma)</span>
+                                <span class="text-white font-medium" data-i18n="skill-4-name">UX / UI Design (Figma)</span>
                                 <span class="text-secondary font-bold text-xs" data-i18n="level-intermediate">Intermediário</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -1040,7 +1040,7 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium">Software Project Management</span>
+                                <span class="text-white font-medium" data-i18n="skill-5-name">Gestão de Projetos de Software</span>
                                 <span class="text-secondary font-bold text-xs" data-i18n="level-basic">Básico</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -1351,6 +1351,11 @@
                 'level-advanced': 'Avançado',
                 'level-intermediate': 'Intermediário',
                 'level-basic': 'Básico',
+                'skill-1-name': 'Marketing Digital & Growth',
+                'skill-2-name': 'Ferramentas de Produtividade (Notion, IA, Google)',
+                'skill-3-name': 'HTML5 & CSS3',
+                'skill-4-name': 'UX / UI Design (Figma)',
+                'skill-5-name': 'Gestão de Projetos de Software',
                 'comp-1-title': 'Liderança Servidora',
                 'comp-1-sub': 'Gestão de Pessoas',
                 'comp-2-title': 'Comunicação',
@@ -1364,12 +1369,9 @@
                 'contact-badge': 'Your Turn',
                 'contact-title': 'Vamos Conversar?',
                 'contact-desc': 'Aberto a diálogos com comitês de admissão, lideranças acadêmicas e parcerias em tecnologia de impacto.',
-                'contact-btn-email': 'Enviar E-mail Direto',
-                'contact-btn-linkedin': 'Conectar no LinkedIn',
-                'contact-btn-github': 'Explorar GitHub',
-                'footer-copy': '© 2026 João Pedro Mayer. Todos os direitos reservados.',
-                'footer-dev': 'Desenvolvido por João Pedro Mayer',
+                'contact-btn': 'Entre em Contato',
                 'typewriter-words': ['Futuro.', 'Inovação.', 'Impacto.'],
+                'footer-dev': 'Desenvolvido por'
             },
             en: {
                 'nav-home': 'Home',
@@ -1463,19 +1465,15 @@
                 'honor-1-tag': 'State / Regional',
                 'honor-1-title': 'SEBRAE Ideathon (2025)',
                 'honor-1-desc': '1st place winner among 1,000+ participating students with an innovative business pitch and scalable sustainable model.',
-                'honor-1-footer': 'Rank 1st of 1,000+ Participants',
                 'honor-2-tag': 'National',
                 'honor-2-title': 'National TECH Marathon (2025)',
                 'honor-2-desc': 'Ranked among top nationwide finalists among 1,000+ competitors with an applied Artificial Intelligence project pitch.',
-                'honor-2-footer': 'National AI Distinction',
                 'honor-3-tag': 'School-wide',
                 'honor-3-title': 'Academic Distinction (CEEP)',
                 'honor-3-desc': 'Maximum academic merit recognition by CEEP among 500+ graduating students, achieving the top GPA (9.1/10.0).',
-                'honor-3-footer': 'Rank #1 of 500+ Students',
                 'honor-4-tag': 'State & Regional',
                 'honor-4-title': 'Sports Champion (2023–26)',
                 'honor-4-desc': '8 gold medals and 2 state finals for the volleyball squad with sustained team captaincy under pressure.',
-                'honor-4-footer': 'Team Captain & High Performance',
                 
                 // Technical Impact
                 'impact-label': 'Innovation & Engineering',
@@ -1499,6 +1497,11 @@
                 'level-advanced': 'Advanced',
                 'level-intermediate': 'Intermediate',
                 'level-basic': 'Basic',
+                'skill-1-name': 'Digital Marketing & Growth',
+                'skill-2-name': 'Digital Productivity Tools (Notion, AI, Google)',
+                'skill-3-name': 'HTML5 & CSS3',
+                'skill-4-name': 'UX / UI Design (Figma)',
+                'skill-5-name': 'Software Project Management',
                 'comp-1-title': 'Servant Leadership',
                 'comp-1-sub': 'Team Management',
                 'comp-2-title': 'Communication',
@@ -1510,11 +1513,11 @@
                 
                 // Contact & Footer
                 'contact-badge': 'Your Turn',
-                'contact-title': "Let's build something amazing?",
-                'contact-desc': 'Open to discussions with admissions committees, educational institutions, mentorship opportunities, and tech impact ventures.',
+                'contact-title': "Let's Talk?",
+                'contact-desc': 'Open to dialogues with admissions committees, academic leadership, and high-impact tech ventures.',
                 'contact-btn': 'Get in Touch',
                 'typewriter-words': ['Future.', 'Innovation.', 'Impact.'],
-                'footer-dev': 'Developed by',
+                'footer-dev': 'Developed by'
             }
         };
 
