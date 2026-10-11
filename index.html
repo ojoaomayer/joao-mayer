@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Mayer | Portfolio</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="src/images/favicon.png">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,10 +96,21 @@
         }
 
         /* Override text colors no tema escuro */
-        body:not(.light-mode) .text-gray-400 { color: #d1d5db !important; }
-        body:not(.light-mode) .text-gray-300 { color: #e5e7eb !important; }
-        body:not(.light-mode) .text-gray-500 { color: #9ca3af !important; }
-        body:not(.light-mode) .text-gray-600 { color: #9ca3af !important; }
+        body:not(.light-mode) .text-gray-400 {
+            color: #d1d5db !important;
+        }
+
+        body:not(.light-mode) .text-gray-300 {
+            color: #e5e7eb !important;
+        }
+
+        body:not(.light-mode) .text-gray-500 {
+            color: #9ca3af !important;
+        }
+
+        body:not(.light-mode) .text-gray-600 {
+            color: #9ca3af !important;
+        }
 
         /* Override Colors in Light Mode */
         .light-mode .text-white:not(.always-white) {
@@ -117,6 +131,7 @@
         #ambition h3 {
             color: #ffffff !important;
         }
+
         #ambition p {
             color: #e2e8f0 !important;
         }
@@ -211,20 +226,30 @@
 
         /* Gradiente de Texto — Animado */
         @keyframes gradient-shift {
-            0%   { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
         }
 
         .text-gradient {
-            background: linear-gradient(
-                to right,
-                #c084fc,   /* violet claro */
-                #8b5cf6,   /* primary purple */
-                #06b6d4,   /* secondary cyan */
-                #38bdf8,   /* sky */
-                #a78bfa,   /* indigo suave */
-                #c084fc    /* fecha no mesmo tom — loop suave */
-            );
+            background: linear-gradient(to right,
+                    #c084fc,
+                    /* violet claro */
+                    #8b5cf6,
+                    /* primary purple */
+                    #06b6d4,
+                    /* secondary cyan */
+                    #38bdf8,
+                    /* sky */
+                    #a78bfa,
+                    /* indigo suave */
+                    #c084fc
+                    /* fecha no mesmo tom — loop suave */
+                );
             background-size: 300% 100%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -312,6 +337,7 @@
         .flip-card {
             perspective: 1000px;
         }
+
         .flip-card-inner {
             position: relative;
             width: 100%;
@@ -319,10 +345,13 @@
             transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
             transform-style: preserve-3d;
         }
+
         .flip-card:hover .flip-card-inner {
             transform: rotateY(180deg);
         }
-        .flip-card-front, .flip-card-back {
+
+        .flip-card-front,
+        .flip-card-back {
             position: absolute;
             inset: 0;
             width: 100%;
@@ -332,6 +361,7 @@
             border-radius: 1rem;
             overflow: hidden;
         }
+
         .flip-card-back {
             transform: rotateY(180deg);
         }
@@ -357,11 +387,11 @@
 
             <!-- Controls (Theme & Language) -->
             <div class="flex items-center space-x-6 text-gray-300">
-                <button onclick="toggleTheme()" class="text-xl hover:text-primary transition-colors"
-                    id="theme-toggle">
+                <button onclick="toggleTheme()" class="text-xl hover:text-primary transition-colors" id="theme-toggle">
                     <i class="ph-fill ph-sun"></i>
                 </button>
-                <button onclick="toggleLanguage()" class="text-xl hover:scale-110 transition-transform" id="lang-toggle" title="Switch language">
+                <button onclick="toggleLanguage()" class="text-xl hover:scale-110 transition-transform" id="lang-toggle"
+                    title="Switch language">
                     🇧🇷
                 </button>
             </div>
@@ -370,30 +400,37 @@
 
     <!-- Tubelight Navbar (Compact & Sleek) -->
     <div class="fixed bottom-6 sm:bottom-auto sm:top-6 left-1/2 -translate-x-1/2 z-[70]">
-        <div class="flex items-center gap-1 sm:gap-2 bg-glass border border-glass-border backdrop-blur-lg py-1 px-1.5 rounded-full shadow-lg relative" id="tubelight-navbar">
-            <a href="#" class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary active-tab whitespace-nowrap">
+        <div class="flex items-center gap-1 sm:gap-2 bg-glass border border-glass-border backdrop-blur-lg py-1 px-1.5 rounded-full shadow-lg relative"
+            id="tubelight-navbar">
+            <a href="#"
+                class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary active-tab whitespace-nowrap">
                 <span class="hidden sm:inline" data-i18n="nav-home">Início</span>
                 <span class="sm:hidden"><i class="ph-bold ph-house text-base"></i></span>
             </a>
-            <a href="#about" class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+            <a href="#about"
+                class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
                 <span class="hidden sm:inline" data-i18n="nav-about">Sobre</span>
                 <span class="sm:hidden"><i class="ph-bold ph-user text-base"></i></span>
             </a>
-            <a href="#journey" class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+            <a href="#journey"
+                class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
                 <span class="hidden sm:inline" data-i18n="nav-journey">Jornada</span>
                 <span class="sm:hidden"><i class="ph-bold ph-path text-base"></i></span>
             </a>
-            <a href="#honors" class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+            <a href="#honors"
+                class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
                 <span class="hidden sm:inline" data-i18n="nav-honors">Conquistas</span>
                 <span class="sm:hidden"><i class="ph-bold ph-trophy text-base"></i></span>
             </a>
-            <a href="#contact" class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
+            <a href="#contact"
+                class="nav-item relative cursor-pointer text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full transition-colors text-gray-400 hover:text-primary whitespace-nowrap">
                 <span class="hidden sm:inline" data-i18n="nav-contact">Contato</span>
                 <span class="sm:hidden"><i class="ph-bold ph-envelope-simple text-base"></i></span>
             </a>
 
             <!-- Lamp -->
-            <div id="tubelight-lamp" class="absolute left-0 top-1 bottom-1 rounded-full -z-10 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none flex flex-col justify-start items-center">
+            <div id="tubelight-lamp"
+                class="absolute left-0 top-1 bottom-1 rounded-full -z-10 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] pointer-events-none flex flex-col justify-start items-center">
                 <div class="absolute inset-0 rounded-full bg-primary opacity-10"></div>
                 <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-t-full">
                     <div class="absolute w-12 h-6 bg-primary rounded-full blur-md -top-2 -left-2 opacity-20"></div>
@@ -408,12 +445,13 @@
     <section class="min-h-screen flex flex-col justify-center px-6 relative pt-20 overflow-hidden">
         <!-- Hero Background GIF -->
         <div class="absolute inset-0 w-full h-full -z-10 overflow-hidden pointer-events-none select-none">
-            <img src="./src/videos/Background Hero Section.gif" alt="Hero Background" class="w-full h-full object-cover opacity-50 scale-105" loading="eager" fetchpriority="high">
+            <img src="./src/videos/Background Hero Section.gif" alt="Hero Background"
+                class="w-full h-full object-cover opacity-50 scale-105" loading="eager" fetchpriority="high">
             <div class="absolute inset-0 bg-gradient-to-b from-void/60 via-void/40 to-void"></div>
         </div>
 
         <div class="text-left max-w-7xl mx-auto w-full z-10">
-            
+
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-extralight mb-6 tracking-tight leading-tight animate-fade-in-up"
                 style="animation-delay: 0.1s;">
                 <span data-i18n="hero-title">Criando</span> <br />
@@ -439,8 +477,11 @@
         </div>
         <!-- Glowing Section Divider (Posicionado exatamente no fim do GIF / Hero Section) -->
         <div class="absolute bottom-0 left-0 right-0 w-full flex items-center justify-center pointer-events-none z-20">
-            <div class="w-full max-w-5xl h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
-            <div class="absolute w-[500px] h-[2px] bg-gradient-to-r from-transparent via-blue-500/60 to-transparent blur-[1px]"></div>
+            <div class="w-full max-w-5xl h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent">
+            </div>
+            <div
+                class="absolute w-[500px] h-[2px] bg-gradient-to-r from-transparent via-blue-500/60 to-transparent blur-[1px]">
+            </div>
         </div>
 
     </section>
@@ -451,23 +492,30 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20">
                 <!-- Coluna de Imagem/Visual (Limpa, sem sobreposição) -->
                 <div class="relative reveal max-w-sm mx-auto lg:mx-0 lg:col-span-5">
-                    <div class="relative rounded-2xl overflow-hidden aspect-[4/5] z-10 border border-glass-border shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)]">
+                    <div
+                        class="relative rounded-2xl overflow-hidden aspect-[4/5] z-10 border border-glass-border shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)]">
                         <img src="./src/images/IMG_6852.jpg" alt="João Mayer"
-                            class="w-full h-full object-cover object-[center_15%]"
-                            fetchpriority="high" decoding="async">
+                            class="w-full h-full object-cover object-[center_15%]" fetchpriority="high"
+                            decoding="async">
                     </div>
                 </div>
 
                 <!-- Coluna de Texto -->
                 <div class="reveal lg:col-span-7">
-                    <h3 class="text-3xl md:text-5xl font-display font-light mb-6 tracking-tight" data-i18n="about-title">Além de um Estudante</h3>
+                    <h3 class="text-3xl md:text-5xl font-display font-light mb-6 tracking-tight"
+                        data-i18n="about-title">Além de um Estudante</h3>
 
                     <div class="space-y-4 text-gray-400 leading-relaxed text-base md:text-lg">
                         <p data-i18n="about-p1">
-                            Desde a infância, a motivação de transformar o mundo em um lugar mais justo e eficiente acendeu uma ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa comunitária, empatia e compromisso com o coletivo.
+                            Desde a infância, a motivação de transformar o mundo em um lugar mais justo e eficiente
+                            acendeu uma ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa
+                            comunitária, empatia e compromisso com o coletivo.
                         </p>
                         <p data-i18n="about-p2">
-                            Formado com mérito acadêmico máximo no Ensino Médio Técnico em Desenvolvimento de Sistemas, vejo a tecnologia e o empreendedorismo como as linguagens mais poderosas para construir soluções escaláveis. Meu objetivo é liderar iniciativas globais de alto impacto com excelência e integridade.
+                            Formado com mérito acadêmico máximo no Ensino Médio Técnico em Desenvolvimento de Sistemas,
+                            vejo a tecnologia e o empreendedorismo como as linguagens mais poderosas para construir
+                            soluções escaláveis. Meu objetivo é liderar iniciativas globais de alto impacto com
+                            excelência e integridade.
                         </p>
                     </div>
                 </div>
@@ -476,29 +524,37 @@
             <!-- Subseção: Academic Snapshot & Stats -->
             <div class="reveal mt-16">
                 <div class="text-center md:text-left mb-8">
-                    <span class="text-xs uppercase tracking-widest text-primary font-bold" data-i18n="stats-subtitle">Métricas & Rigor Acadêmico</span>
-                    <h4 class="text-2xl md:text-3xl font-display font-light text-white mt-1" data-i18n="stats-title">Academic Snapshot</h4>
+                    <span class="text-xs uppercase tracking-widest text-primary font-bold"
+                        data-i18n="stats-subtitle">Métricas & Rigor Acadêmico</span>
+                    <h4 class="text-2xl md:text-3xl font-display font-light text-white mt-1" data-i18n="stats-title">
+                        Academic Snapshot</h4>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Stat 1: GPA -->
-                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-primary relative group hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-primary relative group hover:-translate-y-1 transition-all duration-300">
                         <div class="flex justify-between items-center mb-4">
-                            <div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-xl text-primary">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-xl text-primary">
                                 <i class="ph-fill ph-chart-line-up"></i>
                             </div>
                         </div>
                         <div class="text-4xl lg:text-5xl font-display font-bold text-white mb-2 tracking-tight">
                             9.1 <span class="text-sm font-normal text-gray-400">/ 10.0</span>
                         </div>
-                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-gpa-title">GPA Acadêmico</h5>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-gpa-desc">CEEP Profª Naiana Babaresco de Souza — Formatura: 2025.</p>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-gpa-title">GPA Acadêmico
+                        </h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-gpa-desc">CEEP Profª Naiana
+                            Babaresco de Souza — Formatura: 2025.</p>
                     </div>
 
                     <!-- Stat 2: SAT (1290) -->
-                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-secondary relative group hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-secondary relative group hover:-translate-y-1 transition-all duration-300">
                         <div class="flex justify-between items-center mb-4">
-                            <div class="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-xl text-secondary">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-xl text-secondary">
                                 <i class="ph-fill ph-exam"></i>
                             </div>
                         </div>
@@ -506,35 +562,46 @@
                             1290
                         </div>
                         <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-sat-title">SAT Score</h5>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-sat-desc">Comprovada proficiência analítica e capacidade acadêmica internacional.</p>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-sat-desc">Comprovada
+                            proficiência analítica e capacidade acadêmica internacional.</p>
                     </div>
 
                     <!-- Stat 3: Class Rank -->
-                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-terciary relative group hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-terciary relative group hover:-translate-y-1 transition-all duration-300">
                         <div class="flex justify-between items-center mb-4">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xl text-emerald-400">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-xl text-emerald-400">
                                 <i class="ph-fill ph-medal"></i>
                             </div>
                         </div>
-                        <div class="text-3xl lg:text-4xl font-display font-bold text-white mb-2 tracking-tight" data-i18n="stat-rank-num">
+                        <div class="text-3xl lg:text-4xl font-display font-bold text-white mb-2 tracking-tight"
+                            data-i18n="stat-rank-num">
                             1º Lugar
                         </div>
-                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-rank-title">Class Rank & Distinção</h5>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-rank-desc">Maior Distinção Acadêmica entre 500+ estudantes (Turma de 2025).</p>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-rank-title">Class Rank &
+                            Distinção</h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-rank-desc">Maior Distinção
+                            Acadêmica entre 500+ estudantes (Turma de 2025).</p>
                     </div>
 
                     <!-- Stat 4: Elected Leadership -->
-                    <div class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-quaternary relative group hover:-translate-y-1 transition-all duration-300">
+                    <div
+                        class="glass-card p-6 rounded-2xl spotlight-card border-t-2 border-t-quaternary relative group hover:-translate-y-1 transition-all duration-300">
                         <div class="flex justify-between items-center mb-4">
-                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl text-amber-400">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-xl text-amber-400">
                                 <i class="ph-fill ph-crown"></i>
                             </div>
                         </div>
-                        <div class="text-3xl lg:text-4xl font-display font-bold text-white mb-2 tracking-tight" data-i18n="stat-leader-num">
+                        <div class="text-3xl lg:text-4xl font-display font-bold text-white mb-2 tracking-tight"
+                            data-i18n="stat-leader-num">
                             Presidente
                         </div>
-                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-leader-title">Grêmio Estudantil</h5>
-                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-leader-desc">Gestão 2023–2025 liderando representação discente e projetos educacionais.</p>
+                        <h5 class="text-base font-semibold text-white mb-1" data-i18n="stat-leader-title">Grêmio
+                            Estudantil</h5>
+                        <p class="text-xs text-gray-400 leading-relaxed" data-i18n="stat-leader-desc">Gestão 2023–2025
+                            liderando representação discente e projetos educacionais.</p>
                     </div>
                 </div>
             </div>
@@ -545,26 +612,37 @@
     <section id="journey" class="py-32 md:py-40 px-6 relative border-t border-glass-border">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-20 reveal">
-                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2" data-i18n="journey-label">Trajetória e Impacto</h2>
-                <h3 class="text-3xl md:text-5xl font-display font-light" data-i18n="journey-title">Minha Jornada de Liderança</h3>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="journey-desc">Evolução contínua entre formação acadêmica, liderança institucional, mercado executivo e inovação.</p>
+                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2"
+                    data-i18n="journey-label">Trajetória e Impacto</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-light" data-i18n="journey-title">Minha Jornada de
+                    Liderança</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="journey-desc">Evolução contínua entre
+                    formação acadêmica, liderança institucional, mercado executivo e inovação.</p>
             </div>
 
             <div class="relative">
                 <!-- Linha central degradê -->
-                <div class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-terciary rounded-full"></div>
+                <div
+                    class="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-terciary rounded-full">
+                </div>
 
                 <div class="space-y-12">
                     <!-- Marco 1: Colégio Vicentino -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-vicentino-badge">Colégio Vicentino • Base de Valores</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-vicentino-title">Raízes e Valores</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-vicentino-desc">O Colégio Vicentino moldou meus valores principais: empatia, resiliência, disciplina contínua e responsabilidade comunitária.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-vicentino-badge">Colégio Vicentino • Base de Valores</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-vicentino-title">Raízes e Valores</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-vicentino-desc">O
+                                    Colégio Vicentino moldou meus valores principais: empatia, resiliência, disciplina
+                                    contínua e responsabilidade comunitária.</p>
                             </div>
                         </div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-backpack text-xl text-primary"></i>
                         </div>
                         <div class="hidden md:block md:w-[45%]"></div>
@@ -573,14 +651,20 @@
                     <!-- Marco 2: CEEP Formação Técnica -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-terminal-window text-xl text-secondary"></i>
                         </div>
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-ceep-badge">CEEP • 2022–2025</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-ceep-title">Formação Técnica em Sistemas</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-ceep-desc">Ingresso no Ensino Médio Técnico, descobrindo na programação e na tecnologia a ferramenta mais poderosa para construir soluções escaláveis.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-ceep-badge">CEEP • 2022–2025</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-ceep-title">Formação Técnica em Sistemas</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-ceep-desc">Ingresso
+                                    no Ensino Médio Técnico, descobrindo na programação e na tecnologia a ferramenta
+                                    mais poderosa para construir soluções escaláveis.</p>
                             </div>
                         </div>
                     </div>
@@ -588,13 +672,19 @@
                     <!-- Marco 3: DC Marketing -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-dc-badge">DC Marketing • 2022–2024</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-dc-title">Primeiros Passos no Mercado</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-dc-desc">Início precoce no mercado aos 15 anos, passando 2 anos como estagiário de marketing, absorvendo dinâmicas de agência e impulsionando marcas.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-dc-badge">DC Marketing • 2022–2024</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-dc-title">Primeiros Passos no Mercado</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-dc-desc">Início
+                                    precoce no mercado aos 15 anos, passando 2 anos como estagiário de marketing,
+                                    absorvendo dinâmicas de agência e impulsionando marcas.</p>
                             </div>
                         </div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-briefcase text-xl text-primary"></i>
                         </div>
                         <div class="hidden md:block md:w-[45%]"></div>
@@ -603,14 +693,21 @@
                     <!-- Marco 4: Jogos de Solidariedade Campo Real -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-hand-heart text-xl text-secondary"></i>
                         </div>
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-solidarity-badge">Jogos de Solidariedade Campo Real • 2023</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-solidarity-title">Vocação Comunitária & Ação Social</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-solidarity-desc">Líder de equipe escolar no campeonato solidário entre 7 escolas. Coordenação logística de coleta e doação de alimentos e 300+ peças de agasalho para famílias em vulnerabilidade. (1º Lugar geral).</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-solidarity-badge">Jogos de Solidariedade Campo Real • 2023</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-solidarity-title">Vocação Comunitária & Ação Social</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-solidarity-desc">
+                                    Líder de equipe escolar no campeonato solidário entre 7 escolas. Coordenação
+                                    logística de coleta e doação de alimentos e 300+ peças de agasalho para famílias em
+                                    vulnerabilidade. (1º Lugar geral).</p>
                             </div>
                         </div>
                     </div>
@@ -618,13 +715,19 @@
                     <!-- Marco 5: Presidência do Grêmio Estudantil -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-gremio-badge">Gestão Institucional • 2023–2025</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-gremio-title">Liderança Institucional Estudantil</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-gremio-desc">Eleito Presidente do Grêmio Estudantil do CEEP. Liderança de equipa na conceção e gestão de eventos escolares, mediação com a direção e representação de 500+ estudantes.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-gremio-badge">Gestão Institucional • 2023–2025</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-gremio-title">Liderança Institucional Estudantil</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-gremio-desc">Eleito
+                                    Presidente do Grêmio Estudantil do CEEP. Liderança de equipa na conceção e gestão de
+                                    eventos escolares, mediação com a direção e representação de 500+ estudantes.</p>
                             </div>
                         </div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-users-three text-xl text-primary"></i>
                         </div>
                         <div class="hidden md:block md:w-[45%]"></div>
@@ -633,14 +736,20 @@
                     <!-- Marco 6: Clínica Ale Zorzan -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-chart-line-up text-xl text-secondary"></i>
                         </div>
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-ale-badge">Clínica Ale Zorzan • Gestão de Marketing</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-ale-title">Gestão Estratégica & Resultados</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-ale-desc">Atuação como Gestor de Marketing, traduzindo excelência clínica em autoridade digital, estratégias de aquisição de pacientes e resultados mensuráveis.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-ale-badge">Clínica Ale Zorzan • Gestão de Marketing</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-ale-title">Gestão Estratégica & Resultados</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-ale-desc">Atuação
+                                    como Gestor de Marketing, traduzindo excelência clínica em autoridade digital,
+                                    estratégias de aquisição de pacientes e resultados mensuráveis.</p>
                             </div>
                         </div>
                     </div>
@@ -648,13 +757,20 @@
                     <!-- Marco 7: Embaixador SAEB / INEP -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-saeb-badge">INEP / Governo Federal • 2025</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-saeb-title">Mobilização Educacional em Escala</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-saeb-desc">Selecionado entre mais de 200 alunos pelo INEP para mobilizar e mentorar diretamente mais de 40 colegas, através de palestras e orientação personalizada para o exame nacional SAEB.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-saeb-badge">INEP / Governo Federal • 2025</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-saeb-title">Mobilização Educacional em Escala</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-saeb-desc">
+                                    Selecionado entre mais de 200 alunos pelo INEP para mobilizar e mentorar diretamente
+                                    mais de 40 colegas, através de palestras e orientação personalizada para o exame
+                                    nacional SAEB.</p>
                             </div>
                         </div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-chalkboard-teacher text-xl text-primary"></i>
                         </div>
                         <div class="hidden md:block md:w-[45%]"></div>
@@ -663,14 +779,20 @@
                     <!-- Marco 8: Consultoria e Autoridade -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-secondary/50 text-white z-10 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-scales text-xl text-secondary"></i>
                         </div>
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-consultoria-badge">Consultoria Independente</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-consultoria-title">Consultoria & Estratégia</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-consultoria-desc">Consultoria de marketing e UI/UX para negócios, alinhando comunicação e funis de conversão para gerar impacto e crescimento sólido.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-secondary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-consultoria-badge">Consultoria Independente</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-consultoria-title">Consultoria & Estratégia</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-consultoria-desc">
+                                    Consultoria de marketing e UI/UX para negócios, alinhando comunicação e funis de
+                                    conversão para gerar impacto e crescimento sólido.</p>
                             </div>
                         </div>
                     </div>
@@ -678,13 +800,20 @@
                     <!-- Marco 9: LALA 2026 -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] md:text-right">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-lala-badge">Latin American Leadership Academy • 2026</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-lala-title">Imersão em Liderança Latino-Americana</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-lala-desc">Selecionado para o prestigiado bootcamp de liderança e impacto social da Latin American Leadership Academy. Desenvolveu e codificou o website oficial legado para documentar a trajetória da turma e preservar as memórias comunitárias.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-primary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-lala-badge">Latin American Leadership Academy • 2026</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-lala-title">Imersão em Liderança Latino-Americana</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-lala-desc">
+                                    Selecionado para o prestigiado bootcamp de liderança e impacto social da Latin
+                                    American Leadership Academy. Desenvolveu e codificou o website oficial legado para
+                                    documentar a trajetória da turma e preservar as memórias comunitárias.</p>
                             </div>
                         </div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-primary/50 text-white z-10 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-globe-hemisphere-west text-xl text-primary"></i>
                         </div>
                         <div class="hidden md:block md:w-[45%]"></div>
@@ -693,14 +822,22 @@
                     <!-- Marco 10: Hectara -->
                     <div class="relative flex items-center md:justify-between w-full group reveal">
                         <div class="hidden md:block md:w-[45%]"></div>
-                        <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-terciary/50 text-white z-10 group-hover:scale-110 group-hover:border-terciary group-hover:shadow-[0_0_20px_rgba(5,122,85,0.6)] transition-all bg-void">
+                        <div
+                            class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full glass-card border border-terciary/50 text-white z-10 group-hover:scale-110 group-hover:border-terciary group-hover:shadow-[0_0_20px_rgba(5,122,85,0.6)] transition-all bg-void">
                             <i class="ph-fill ph-plant text-xl text-emerald-400"></i>
                         </div>
                         <div class="w-full pl-20 md:pl-0 md:w-[45%] text-left">
-                            <div class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
-                                <span class="text-xs text-terciary font-bold tracking-wider uppercase block mb-2" data-i18n="journey-hectara-badge">AgTech & Inteligência Artificial • 2025–Presente</span>
-                                <h4 class="text-lg font-display font-light text-white mb-2" data-i18n="journey-hectara-title">Empreendedorismo e Soluções Tecnológicas</h4>
-                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-hectara-desc">Idealização e liderança de uma AgTech de IA para dados agrícolas (Co-Founder & CEO), validada através de pesquisa de campo intensiva com cooperativas rurais regionais.</p>
+                            <div
+                                class="glass-card p-6 rounded-2xl spotlight-card cursor-default group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-300 shadow-lg">
+                                <span class="text-xs text-terciary font-bold tracking-wider uppercase block mb-2"
+                                    data-i18n="journey-hectara-badge">AgTech & Inteligência Artificial •
+                                    2025–Presente</span>
+                                <h4 class="text-lg font-display font-light text-white mb-2"
+                                    data-i18n="journey-hectara-title">Empreendedorismo e Soluções Tecnológicas</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed" data-i18n="journey-hectara-desc">
+                                    Idealização e liderança de uma AgTech de IA para dados agrícolas (Co-Founder & CEO),
+                                    validada através de pesquisa de campo intensiva com cooperativas rurais regionais.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -713,8 +850,10 @@
     <section id="pillars" class="py-32 md:py-40 px-6 relative overflow-hidden border-t border-glass-border">
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16 reveal">
-                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="pillars-title">Pilares Extracurriculares</h3>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="pillars-desc">Passe o mouse sobre os cards para visualizar os detalhes e realizações de cada pilar.</p>
+                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="pillars-title">Pilares
+                    Extracurriculares</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="pillars-desc">Passe o mouse sobre os cards
+                    para visualizar os detalhes e realizações de cada pilar.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -723,26 +862,38 @@
                     <div class="flip-card-inner">
                         <!-- Frente -->
                         <div class="flip-card-front flex flex-col justify-end p-8 border border-white/10 shadow-2xl">
-                            <img src="./src/images/resiliencia.jpg" alt="Atleta de Rendimento" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="./src/images/resiliencia.jpg" alt="Atleta de Rendimento"
+                                class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
-                            
+
                             <div class="relative z-10 space-y-3">
-                                <h3 class="text-2xl font-display font-medium text-white always-white" data-i18n="pillar-1-title">Atleta de Rendimento & Liderança Desportiva</h3>
+                                <h3 class="text-2xl font-display font-medium text-white always-white"
+                                    data-i18n="pillar-1-title">Atleta de Rendimento & Liderança Desportiva</h3>
                                 <div class="inline-flex items-center gap-1.5 text-xs text-primary font-semibold pt-1">
-                                    <i class="ph-bold ph-arrow-counter-clockwise"></i> <span data-i18n="pillar-hover-hint">Passe o mouse para ler</span>
+                                    <i class="ph-bold ph-arrow-counter-clockwise"></i> <span
+                                        data-i18n="pillar-hover-hint">Passe o mouse para ler</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Verso -->
-                        <div class="flip-card-back glass-card p-8 flex flex-col justify-center border border-primary/40 bg-void/95">
+                        <div
+                            class="flip-card-back glass-card p-8 flex flex-col justify-center border border-primary/40 bg-void/95">
                             <div class="space-y-4 text-left">
                                 <div class="flex gap-2">
-                                    <span class="px-2.5 py-1 rounded bg-primary/20 text-primary border border-primary/30 text-xs font-bold" data-i18n="pillar-1-badge1">Capitão de Equipe</span>
-                                    <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold" data-i18n="pillar-1-badge2">8x Ouro</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-primary/20 text-primary border border-primary/30 text-xs font-bold"
+                                        data-i18n="pillar-1-badge1">Capitão de Equipe</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-bold"
+                                        data-i18n="pillar-1-badge2">8x Ouro</span>
                                 </div>
-                                <h4 class="text-xl font-display font-medium text-white" data-i18n="pillar-1-title">Atleta de Rendimento & Liderança Desportiva</h4>
+                                <h4 class="text-xl font-display font-medium text-white" data-i18n="pillar-1-title">
+                                    Atleta de Rendimento & Liderança Desportiva</h4>
                                 <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pillar-1-desc">
-                                    Atleta competitivo desde os 15 anos pela seleção de Laranjeiras do Sul (Alavolei). Capitão de equipe, 8x medalhista de ouro em torneios regionais/estaduais (2023–2026) e 2x finalista estadual. Foco em resiliência sob pressão, disciplina contínua e espírito coletivo.
+                                    Atleta competitivo desde os 15 anos pela seleção de Laranjeiras do Sul (Alavolei).
+                                    Capitão de equipe, 8x medalhista de ouro em torneios regionais/estaduais (2023–2026)
+                                    e 2x finalista estadual. Foco em resiliência sob pressão, disciplina contínua e
+                                    espírito coletivo.
                                 </p>
                             </div>
                         </div>
@@ -754,26 +905,37 @@
                     <div class="flip-card-inner">
                         <!-- Frente -->
                         <div class="flip-card-front flex flex-col justify-end p-8 border border-white/10 shadow-2xl">
-                            <img src="./src/images/sentado.jpg" alt="Trajetória Profissional" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
+                            <img src="./src/images/sentado.jpg" alt="Trajetória Profissional"
+                                class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async">
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
-                            
+
                             <div class="relative z-10 space-y-3">
-                                <h3 class="text-2xl font-display font-medium text-white always-white" data-i18n="pillar-2-title">Marketing Digital & Gestão Estratégica</h3>
+                                <h3 class="text-2xl font-display font-medium text-white always-white"
+                                    data-i18n="pillar-2-title">Marketing Digital & Gestão Estratégica</h3>
                                 <div class="inline-flex items-center gap-1.5 text-xs text-secondary font-semibold pt-1">
-                                    <i class="ph-bold ph-arrow-counter-clockwise"></i> <span data-i18n="pillar-hover-hint">Passe o mouse para ler</span>
+                                    <i class="ph-bold ph-arrow-counter-clockwise"></i> <span
+                                        data-i18n="pillar-hover-hint">Passe o mouse para ler</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Verso -->
-                        <div class="flip-card-back glass-card p-8 flex flex-col justify-center border border-secondary/40 bg-void/95">
+                        <div
+                            class="flip-card-back glass-card p-8 flex flex-col justify-center border border-secondary/40 bg-void/95">
                             <div class="space-y-4 text-left">
                                 <div class="flex gap-2">
-                                    <span class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold" data-i18n="pillar-2-badge1">14+ Empresas</span>
-                                    <span class="px-2.5 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-bold" data-i18n="pillar-2-badge2">Gestão Estratégica</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-bold"
+                                        data-i18n="pillar-2-badge1">14+ Empresas</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 text-xs font-bold"
+                                        data-i18n="pillar-2-badge2">Gestão Estratégica</span>
                                 </div>
-                                <h4 class="text-xl font-display font-medium text-white" data-i18n="pillar-2-title">Marketing Digital & Gestão Estratégica</h4>
+                                <h4 class="text-xl font-display font-medium text-white" data-i18n="pillar-2-title">
+                                    Marketing Digital & Gestão Estratégica</h4>
                                 <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pillar-2-desc">
-                                    De estagiário a gestor autônomo. Gestão de posicionamento digital e conversão para mais de 14 empresas, desenvolvendo automações, criação de websites de alto impacto, conteúdos multimídia e presença de mercado alinhada a resultados quantitativos.
+                                    De estagiário a gestor autônomo. Gestão de posicionamento digital e conversão para
+                                    mais de 14 empresas, desenvolvendo automações, criação de websites de alto impacto,
+                                    conteúdos multimídia e presença de mercado alinhada a resultados quantitativos.
                                 </p>
                             </div>
                         </div>
@@ -785,26 +947,39 @@
                     <div class="flip-card-inner">
                         <!-- Frente -->
                         <div class="flip-card-front flex flex-col justify-end p-8 border border-white/10 shadow-2xl">
-                            <img src="./src/images/hectara.png" alt="Inovação no Agronegócio" class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" decoding="async">
+                            <img src="./src/images/hectara.png" alt="Inovação no Agronegócio"
+                                class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy"
+                                decoding="async">
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30"></div>
-                            
+
                             <div class="relative z-10 space-y-3">
-                                <h3 class="text-2xl font-display font-medium text-white always-white" data-i18n="pillar-3-title">Inovação e IA para o Agronegócio</h3>
-                                <div class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold pt-1">
-                                    <i class="ph-bold ph-arrow-counter-clockwise"></i> <span data-i18n="pillar-hover-hint">Passe o mouse para ler</span>
+                                <h3 class="text-2xl font-display font-medium text-white always-white"
+                                    data-i18n="pillar-3-title">Inovação e IA para o Agronegócio</h3>
+                                <div
+                                    class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold pt-1">
+                                    <i class="ph-bold ph-arrow-counter-clockwise"></i> <span
+                                        data-i18n="pillar-hover-hint">Passe o mouse para ler</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Verso -->
-                        <div class="flip-card-back glass-card p-8 flex flex-col justify-center border border-emerald-500/40 bg-void/95">
+                        <div
+                            class="flip-card-back glass-card p-8 flex flex-col justify-center border border-emerald-500/40 bg-void/95">
                             <div class="space-y-4 text-left">
                                 <div class="flex gap-2">
-                                    <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold" data-i18n="pillar-3-badge1">Co-Founder & CEO</span>
-                                    <span class="px-2.5 py-1 rounded bg-green-500/20 text-green-300 border border-green-500/30 text-xs font-bold" data-i18n="pillar-3-badge2">AgTech & IA</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold"
+                                        data-i18n="pillar-3-badge1">Co-Founder & CEO</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded bg-green-500/20 text-green-300 border border-green-500/30 text-xs font-bold"
+                                        data-i18n="pillar-3-badge2">AgTech & IA</span>
                                 </div>
-                                <h4 class="text-xl font-display font-medium text-white" data-i18n="pillar-3-title">Inovação e IA para o Agronegócio</h4>
+                                <h4 class="text-xl font-display font-medium text-white" data-i18n="pillar-3-title">
+                                    Inovação e IA para o Agronegócio</h4>
                                 <p class="text-gray-300 text-sm leading-relaxed" data-i18n="pillar-3-desc">
-                                    Liderança de produto na Hectara, validação prática com produtores rurais e cooperativas regionais, e integração de inteligência computacional para resolver desafios econômicos e de produtividade no agronegócio nacional.
+                                    Liderança de produto na Hectara, validação prática com produtores rurais e
+                                    cooperativas regionais, e integração de inteligência computacional para resolver
+                                    desafios econômicos e de produtividade no agronegócio nacional.
                                 </p>
                             </div>
                         </div>
@@ -818,79 +993,106 @@
     <section id="honors" class="py-32 md:py-40 px-6 relative border-t border-glass-border">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2" data-i18n="honors-label">Reconhecimento & Premiações</h2>
-                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="honors-title">Honras & Distinções Acadêmicas</h3>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="honors-desc">Conquistas de excelência acadêmica, competições de tecnologia e campeonatos esportivos.</p>
+                <h2 class="text-sm font-semibold text-secondary uppercase tracking-widest mb-2"
+                    data-i18n="honors-label">Reconhecimento & Premiações</h2>
+                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="honors-title">Honras &
+                    Distinções Acadêmicas</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-i18n="honors-desc">Conquistas de excelência
+                    acadêmica, competições de tecnologia e campeonatos esportivos.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Conquista 1: Ideathon SEBRAE (Card Quadrado) -->
-                <div class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-amber-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
+                <div
+                    class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-amber-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
-                            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl text-amber-400">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl text-amber-400">
                                 <i class="ph-fill ph-trophy"></i>
                             </div>
-                            <span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30" data-i18n="honor-1-tag">Regional / Estadual</span>
+                            <span
+                                class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30"
+                                data-i18n="honor-1-tag">Regional / Estadual</span>
                         </div>
                         <div>
-                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-1-title">Ideathon SEBRAE (2025)</h4>
+                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-1-title">
+                                Ideathon SEBRAE (2025)</h4>
                             <p class="text-xs text-gray-400 leading-relaxed" data-i18n="honor-1-desc">
-                                Vencedor em 1º lugar entre mais de 1.000 estudantes com proposta inovadora de negócios e modelo escalável.
+                                Vencedor em 1º lugar entre mais de 1.000 estudantes com proposta inovadora de negócios e
+                                modelo escalável.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Conquista 2: Maratona TECH (Card Quadrado) -->
-                <div class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-cyan-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
+                <div
+                    class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-cyan-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
-                            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl text-cyan-400">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-2xl text-cyan-400">
                                 <i class="ph-fill ph-medal"></i>
                             </div>
-                            <span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30" data-i18n="honor-2-tag">Nacional</span>
+                            <span
+                                class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                                data-i18n="honor-2-tag">Nacional</span>
                         </div>
                         <div>
-                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-2-title">Maratona TECH (2025)</h4>
+                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-2-title">
+                                Maratona TECH (2025)</h4>
                             <p class="text-xs text-gray-400 leading-relaxed" data-i18n="honor-2-desc">
-                                Classificado entre os melhores do país entre 1.000+ concorrentes com pitch de projeto de Inteligência Artificial.
+                                Classificado entre os melhores do país entre 1.000+ concorrentes com pitch de projeto de
+                                Inteligência Artificial.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Conquista 3: Highest Academic Distinction (Card Quadrado) -->
-                <div class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-primary hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
+                <div
+                    class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-primary hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
-                            <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-2xl text-primary">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-2xl text-primary">
                                 <i class="ph-fill ph-certificate"></i>
                             </div>
-                            <span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-primary/20 text-purple-300 border border-primary/30" data-i18n="honor-3-tag">School-wide</span>
+                            <span
+                                class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-primary/20 text-purple-300 border border-primary/30"
+                                data-i18n="honor-3-tag">School-wide</span>
                         </div>
                         <div>
-                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-3-title">Academic Distinction (CEEP)</h4>
+                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-3-title">
+                                Academic Distinction (CEEP)</h4>
                             <p class="text-xs text-gray-400 leading-relaxed" data-i18n="honor-3-desc">
-                                Maior mérito acadêmico pelo CEEP entre 500+ estudantes graduandos, com o maior GPA da instituição (9.1/10.0).
+                                Maior mérito acadêmico pelo CEEP entre 500+ estudantes graduandos, com o maior GPA da
+                                instituição (9.1/10.0).
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Conquista 4: Capitão & Campeão Esportivo (Card Quadrado) -->
-                <div class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-emerald-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
+                <div
+                    class="glass-card p-6 rounded-2xl spotlight-card flex flex-col justify-between border-t-2 border-t-emerald-400 hover:bg-white/5 transition-all duration-300 reveal shadow-lg aspect-square">
                     <div class="space-y-4">
                         <div class="flex justify-between items-start">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl text-emerald-400">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl text-emerald-400">
                                 <i class="ph-fill ph-crown"></i>
                             </div>
-                            <span class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" data-i18n="honor-4-tag">Estadual & Regional</span>
+                            <span
+                                class="px-2 py-0.5 rounded text-[11px] font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                                data-i18n="honor-4-tag">Estadual & Regional</span>
                         </div>
                         <div>
-                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-4-title">Campeão Esportivo (2023–26)</h4>
+                            <h4 class="text-lg font-display font-medium text-white mb-2" data-i18n="honor-4-title">
+                                Campeão Esportivo (2023–26)</h4>
                             <p class="text-xs text-gray-400 leading-relaxed" data-i18n="honor-4-desc">
-                                8 medalhas de ouro e 2 finais estaduais pela seleção de voleibol com liderança contínua de equipe.
+                                8 medalhas de ouro e 2 finais estaduais pela seleção de voleibol com liderança contínua
+                                de equipe.
                             </p>
                         </div>
                     </div>
@@ -904,76 +1106,99 @@
         <div class="w-full max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
                 <div>
-                    <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-2" data-i18n="impact-label">Inovação & Engenharia</h2>
-                    <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="impact-title">Impacto Técnico & Projetos</h3>
+                    <h2 class="text-sm font-semibold text-primary uppercase tracking-widest mb-2"
+                        data-i18n="impact-label">Inovação & Engenharia</h2>
+                    <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="impact-title">Impacto
+                        Técnico & Projetos</h3>
                 </div>
                 <a href="https://github.com/ojoaomayer" target="_blank" rel="noopener noreferrer"
                     class="text-sm text-gray-400 hover:text-white mt-4 md:mt-0 flex items-center gap-1 group">
-                    <span data-i18n="impact-github">Ver Repositórios no GitHub</span> <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    <span data-i18n="impact-github">Ver Repositórios no GitHub</span> <i
+                        class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Hectara -->
-                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
+                <article
+                    class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
                     <div>
                         <div class="h-48 overflow-hidden relative bg-black/40 flex items-center justify-center p-6">
                             <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
-                            <img src="./src/images/hectara.png" alt="Hectara" class="max-h-36 object-contain group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async">
+                            <img src="./src/images/hectara.png" alt="Hectara"
+                                class="max-h-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy" decoding="async">
                         </div>
                         <div class="p-6 relative z-20">
-                            <h4 class="text-xl font-display font-medium mb-2 text-white group-hover:text-secondary transition-colors" data-i18n="project-hectara-title">Hectara</h4>
+                            <h4 class="text-xl font-display font-medium mb-2 text-white group-hover:text-secondary transition-colors"
+                                data-i18n="project-hectara-title">Hectara</h4>
                             <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="project-hectara-desc">
-                                AgTech de inteligência de dados agrícolas para otimização de decisões no campo. Idealizada em ideathon e validada diretamente em pesquisa de campo com cooperativas e produtores rurais.
+                                AgTech de inteligência de dados agrícolas para otimização de decisões no campo.
+                                Idealizada em ideathon e validada diretamente em pesquisa de campo com cooperativas e
+                                produtores rurais.
                             </p>
                         </div>
                     </div>
                     <div class="p-6 pt-0 relative z-20">
                         <span class="inline-flex items-center text-xs font-bold text-emerald-400 gap-1">
-                            <i class="ph-bold ph-check-circle"></i> <span data-i18n="project-hectara-status">Em Validação & Desenvolvimento Ativo</span>
+                            <i class="ph-bold ph-check-circle"></i> <span data-i18n="project-hectara-status">Em
+                                Validação & Desenvolvimento Ativo</span>
                         </span>
                     </div>
                 </article>
 
                 <!-- LALA Website Legado -->
-                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
+                <article
+                    class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
                     <div>
                         <div class="h-48 overflow-hidden relative bg-black/40">
                             <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
-                            <img src="./src/images/global.jpg" alt="LALA Legacy Website" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async">
+                            <img src="./src/images/global.jpg" alt="LALA Legacy Website"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy" decoding="async">
                         </div>
                         <div class="p-6 relative z-20">
-                            <h4 class="text-xl font-display font-medium mb-2 text-white group-hover:text-secondary transition-colors" data-i18n="project-lala-title">Website Legado LALA</h4>
+                            <h4 class="text-xl font-display font-medium mb-2 text-white group-hover:text-secondary transition-colors"
+                                data-i18n="project-lala-title">Website Legado LALA</h4>
                             <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="project-lala-desc">
-                                Plataforma oficial desenvolvida e codificada por mim para documentar a trajetória, os projetos comunitários e as memórias da turma no bootcamp da Latin American Leadership Academy.
+                                Plataforma oficial desenvolvida e codificada por mim para documentar a trajetória, os
+                                projetos comunitários e as memórias da turma no bootcamp da Latin American Leadership
+                                Academy.
                             </p>
                         </div>
                     </div>
                     <div class="p-6 pt-0 relative z-20">
                         <span class="inline-flex items-center text-xs font-bold text-primary gap-1">
-                            <i class="ph-bold ph-globe"></i> <span data-i18n="project-lala-status">Desenvolvido & Entregue para a Comunidade</span>
+                            <i class="ph-bold ph-globe"></i> <span data-i18n="project-lala-status">Desenvolvido &
+                                Entregue para a Comunidade</span>
                         </span>
                     </div>
                 </article>
 
                 <!-- Reserva Aí -->
-                <article class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
+                <article
+                    class="glass-card rounded-2xl overflow-hidden relative group spotlight-card cursor-default reveal border border-white/10 flex flex-col justify-between">
                     <div>
                         <div class="h-48 overflow-hidden relative bg-black/40">
                             <div class="absolute inset-0 bg-gradient-to-t from-void to-transparent z-10"></div>
-                            <img src="./src/images/hotel.png" alt="Reserva Aí" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async">
+                            <img src="./src/images/hotel.png" alt="Reserva Aí"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                loading="lazy" decoding="async">
                         </div>
                         <div class="p-6 relative z-20">
-                            <h4 class="text-xl font-display font-medium mb-2 text-white group-hover:text-secondary transition-colors" data-i18n="project-academic-title">Reserva Aí</h4>
+                            <h4 class="text-xl font-display font-medium mb-2 text-white group-hover:text-secondary transition-colors"
+                                data-i18n="project-academic-title">Reserva Aí</h4>
                             <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="project-academic-desc">
-                                Sistema completo de gestão e reservas hoteleiras desenvolvido como projeto técnico, com arquitetura escalável e protótipo finalizado.
+                                Sistema completo de gestão e reservas hoteleiras desenvolvido como projeto técnico, com
+                                arquitetura escalável e protótipo finalizado.
                             </p>
                         </div>
                     </div>
                     <div class="p-6 pt-0 relative z-20">
                         <a href="https://github.com/AldohenriqueBS/tcc" target="_blank" rel="noopener noreferrer"
                             class="inline-flex items-center text-xs font-bold text-white hover:text-primary transition-colors gap-1">
-                            <span data-i18n="project-view-code">Ver Código Fonte</span> <i class="ph-bold ph-arrow-right"></i>
+                            <span data-i18n="project-view-code">Ver Código Fonte</span> <i
+                                class="ph-bold ph-arrow-right"></i>
                         </a>
                     </div>
                 </article>
@@ -985,23 +1210,29 @@
     <section id="skills" class="py-32 md:py-40 px-6 relative border-t border-glass-border">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="skills-title">Proficiencies & Competências</h3>
-                <p class="text-gray-400 mt-3 max-w-xl mx-auto text-sm" data-i18n="skills-desc">Domínios práticos e competências fundamentais de liderança.</p>
+                <h3 class="text-3xl md:text-5xl font-display font-light text-white" data-i18n="skills-title">
+                    Proficiencies & Competências</h3>
+                <p class="text-gray-400 mt-3 max-w-xl mx-auto text-sm" data-i18n="skills-desc">Domínios práticos e
+                    competências fundamentais de liderança.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Hard Skills & Domínios (Minimalista) -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card reveal border-t-2 border-t-secondary space-y-5">
+                <div
+                    class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card reveal border-t-2 border-t-secondary space-y-5">
                     <div class="flex items-center gap-3 pb-3 border-b border-white/5">
                         <i class="ph-fill ph-code text-secondary text-2xl"></i>
-                        <h4 class="text-lg font-display font-medium text-white" data-i18n="skills-hard-title">Hard Skills</h4>
+                        <h4 class="text-lg font-display font-medium text-white" data-i18n="skills-hard-title">Hard
+                            Skills</h4>
                     </div>
 
                     <div class="space-y-4 text-sm">
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium" data-i18n="skill-1-name">Marketing Digital & Growth</span>
-                                <span class="text-secondary font-bold text-xs" data-i18n="level-advanced">Avançado</span>
+                                <span class="text-white font-medium" data-i18n="skill-1-name">Marketing Digital &
+                                    Growth</span>
+                                <span class="text-secondary font-bold text-xs"
+                                    data-i18n="level-advanced">Avançado</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                                 <div class="h-full bg-secondary rounded-full w-[95%]"></div>
@@ -1010,8 +1241,10 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium" data-i18n="skill-2-name">Ferramentas de Produtividade (Notion, IA, Google)</span>
-                                <span class="text-secondary font-bold text-xs" data-i18n="level-advanced">Avançado</span>
+                                <span class="text-white font-medium" data-i18n="skill-2-name">Ferramentas de
+                                    Produtividade (Notion, IA, Google)</span>
+                                <span class="text-secondary font-bold text-xs"
+                                    data-i18n="level-advanced">Avançado</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                                 <div class="h-full bg-secondary rounded-full w-[90%]"></div>
@@ -1021,7 +1254,8 @@
                         <div>
                             <div class="flex justify-between mb-1.5">
                                 <span class="text-white font-medium" data-i18n="skill-3-name">HTML5 & CSS3</span>
-                                <span class="text-secondary font-bold text-xs" data-i18n="level-intermediate">Intermediário</span>
+                                <span class="text-secondary font-bold text-xs"
+                                    data-i18n="level-intermediate">Intermediário</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                                 <div class="h-full bg-secondary rounded-full w-[80%]"></div>
@@ -1030,8 +1264,10 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium" data-i18n="skill-4-name">UX / UI Design (Figma)</span>
-                                <span class="text-secondary font-bold text-xs" data-i18n="level-intermediate">Intermediário</span>
+                                <span class="text-white font-medium" data-i18n="skill-4-name">UX / UI Design
+                                    (Figma)</span>
+                                <span class="text-secondary font-bold text-xs"
+                                    data-i18n="level-intermediate">Intermediário</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                                 <div class="h-full bg-secondary rounded-full w-[75%]"></div>
@@ -1040,7 +1276,8 @@
 
                         <div>
                             <div class="flex justify-between mb-1.5">
-                                <span class="text-white font-medium" data-i18n="skill-5-name">Gestão de Projetos de Software</span>
+                                <span class="text-white font-medium" data-i18n="skill-5-name">Gestão de Projetos de
+                                    Software</span>
                                 <span class="text-secondary font-bold text-xs" data-i18n="level-basic">Básico</span>
                             </div>
                             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -1051,17 +1288,20 @@
                 </div>
 
                 <!-- Core Competencies (Minimalista) -->
-                <div class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card reveal border-t-2 border-t-primary space-y-5">
+                <div
+                    class="glass-card p-6 sm:p-8 rounded-2xl spotlight-card reveal border-t-2 border-t-primary space-y-5">
                     <div class="flex items-center gap-3 pb-3 border-b border-white/5">
                         <i class="ph-fill ph-brain text-primary text-2xl"></i>
-                        <h4 class="text-lg font-display font-medium text-white" data-i18n="skills-soft-title">Core Competencies</h4>
+                        <h4 class="text-lg font-display font-medium text-white" data-i18n="skills-soft-title">Core
+                            Competencies</h4>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                         <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
                             <i class="ph-fill ph-users text-xl text-primary"></i>
                             <div>
-                                <h5 class="text-white font-semibold text-xs" data-i18n="comp-1-title">Liderança Servidora</h5>
+                                <h5 class="text-white font-semibold text-xs" data-i18n="comp-1-title">Liderança
+                                    Servidora</h5>
                                 <span class="text-[11px] text-gray-400" data-i18n="comp-1-sub">Gestão de Equipes</span>
                             </div>
                         </div>
@@ -1070,14 +1310,16 @@
                             <i class="ph-fill ph-microphone-stage text-xl text-primary"></i>
                             <div>
                                 <h5 class="text-white font-semibold text-xs" data-i18n="comp-2-title">Comunicação</h5>
-                                <span class="text-[11px] text-gray-400" data-i18n="comp-2-sub">Oratória & Articulação</span>
+                                <span class="text-[11px] text-gray-400" data-i18n="comp-2-sub">Oratória &
+                                    Articulação</span>
                             </div>
                         </div>
 
                         <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
                             <i class="ph-fill ph-lightbulb text-xl text-primary"></i>
                             <div>
-                                <h5 class="text-white font-semibold text-xs" data-i18n="comp-3-title">Problem-Solving</h5>
+                                <h5 class="text-white font-semibold text-xs" data-i18n="comp-3-title">Problem-Solving
+                                </h5>
                                 <span class="text-[11px] text-gray-400" data-i18n="comp-3-sub">Análise Crítica</span>
                             </div>
                         </div>
@@ -1098,13 +1340,16 @@
     <!-- Contato -->
     <section id="contact" class="pt-16 pb-28 md:pt-20 md:pb-36 px-6 border-t border-white/5">
         <div class="max-w-3xl mx-auto text-center reveal">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
                 <i class="ph-bold ph-envelope-open"></i>
                 <span data-i18n="contact-badge">Your Turn</span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-display font-light mb-6 text-white" data-i18n="contact-title">Vamos construir algo incrível?</h2>
+            <h2 class="text-4xl md:text-5xl font-display font-light mb-6 text-white" data-i18n="contact-title">Vamos
+                construir algo incrível?</h2>
             <p class="text-gray-400 mb-10 text-base md:text-lg leading-relaxed" data-i18n="contact-desc">
-                Aberto a diálogos com comitês de admissão, instituições educacionais, oportunidades de mentoria e projetos de impacto tecnológico.
+                Aberto a diálogos com comitês de admissão, instituições educacionais, oportunidades de mentoria e
+                projetos de impacto tecnológico.
             </p>
 
             <a href="https://wa.me/5542991667003"
@@ -1129,7 +1374,8 @@
 
     <!-- Footer -->
     <footer class="py-8 text-center text-gray-600 text-sm">
-        <p>&copy; 2026 <span data-i18n="footer-dev">Desenvolvido por</span> @ojoaomayer <i class="ph-fill ph-rocket"></i></p>
+        <p>&copy; 2026 <span data-i18n="footer-dev">Desenvolvido por</span> @ojoaomayer <i
+                class="ph-fill ph-rocket"></i></p>
     </footer>
 
     <!-- Scripts Lógicos -->
@@ -1234,7 +1480,7 @@
                 'hero-desc': 'Focado em tornar este mundo um lugar melhor, apaixonado por liderança, comunicação e tecnologia',
                 'hero-btn-projects': 'Ver Projetos',
                 'hero-btn-contact': 'Entrar em contato',
-                
+
                 // About & Stats
                 'about-title': 'Além de um Estudante',
                 'about-p1': 'Desde a infância, a motivação de transformar o mundo em um lugar mais justo e eficiente acendeu uma ambição inegociável. Descobri cedo que a verdadeira liderança age por iniciativa comunitária, empatia e compromisso com o coletivo.',
@@ -1255,7 +1501,7 @@
                 'stat-leader-num': 'Presidente',
                 'stat-leader-title': 'Grêmio Estudantil',
                 'stat-leader-desc': 'Gestão 2023–2025 liderando representação discente e projetos educacionais.',
-                
+
                 // Timeline
                 'journey-label': 'Trajetória e Impacto',
                 'journey-title': 'Minha Jornada de Liderança',
@@ -1290,7 +1536,7 @@
                 'journey-hectara-badge': 'AgTech & Inteligência Artificial • 2025–Presente',
                 'journey-hectara-title': 'Empreendedorismo e Soluções Tecnológicas',
                 'journey-hectara-desc': 'Idealização e liderança de uma AgTech de IA para dados agrícolas (Co-Founder & CEO), validada através de pesquisa de campo intensiva com cooperativas rurais regionais.',
-                
+
                 // Extracurricular Pillars
                 'pillars-title': 'Pilares Extracurriculares',
                 'pillars-desc': 'Passe o mouse sobre os cards para visualizar os detalhes e realizações de cada pilar.',
@@ -1307,7 +1553,7 @@
                 'pillar-3-badge2': 'AgTech & IA',
                 'pillar-3-title': 'Inovação e IA para o Agronegócio',
                 'pillar-3-desc': 'Liderança de produto na Hectara, validação prática com produtores rurais e cooperativas regionais, e integração de inteligência computacional para resolver desafios econômicos e de produtividade no agronegócio nacional.',
-                
+
                 // Academic Honors
                 'honors-label': 'Reconhecimento & Premiações',
                 'honors-title': 'Honras & Distinções Acadêmicas',
@@ -1328,7 +1574,7 @@
                 'honor-4-title': 'Campeão Esportivo (2023–26)',
                 'honor-4-desc': '8 medalhas de ouro e 2 finais estaduais pela seleção de voleibol com liderança contínua de equipe.',
                 'honor-4-footer': 'Capitania & Alto Rendimento',
-                
+
                 // Technical Impact
                 'impact-label': 'Inovação & Engenharia',
                 'impact-title': 'Impacto Técnico & Projetos',
@@ -1342,7 +1588,7 @@
                 'project-academic-title': 'Reserva Aí',
                 'project-academic-desc': 'Sistema completo de gestão e reservas hoteleiras desenvolvido como projeto técnico, com arquitetura escalável e protótipo finalizado.',
                 'project-view-code': 'Ver Código Fonte',
-                
+
                 // Skills
                 'skills-title': 'Proficiências & Competências',
                 'skills-desc': 'Domínios práticos aplicados e competências centrais de liderança.',
@@ -1364,7 +1610,7 @@
                 'comp-3-sub': 'Análise Crítica',
                 'comp-4-title': 'Organização',
                 'comp-4-sub': 'Execução & Rigor',
-                
+
                 // Contact & Footer
                 'contact-badge': 'Your Turn',
                 'contact-title': 'Vamos Conversar?',
@@ -1384,7 +1630,7 @@
                 'hero-desc': 'Focused on making this world a better place, passionate about leadership, communication and technology',
                 'hero-btn-projects': 'View Projects',
                 'hero-btn-contact': 'Get in touch',
-                
+
                 // About & Stats
                 'about-title': 'Beyond a Student',
                 'about-p1': 'Since childhood, the drive to make the world more equitable and efficient ignited an undeniable ambition. I discovered early that true leadership stems from community initiative, empathy, and collective commitment.',
@@ -1405,7 +1651,7 @@
                 'stat-leader-num': 'President',
                 'stat-leader-title': 'Student Government',
                 'stat-leader-desc': '2023–2025 tenure leading student representation and schoolwide initiatives.',
-                
+
                 // Timeline
                 'journey-label': 'Trajectory & Impact',
                 'journey-title': 'My Leadership Journey',
@@ -1440,7 +1686,7 @@
                 'journey-hectara-badge': 'AgTech & Artificial Intelligence • 2025–Present',
                 'journey-hectara-title': 'Entrepreneurship & Tech Solutions',
                 'journey-hectara-desc': 'Conception and leadership of an agricultural data AI startup (Co-Founder & CEO), validated through extensive field research with regional agricultural cooperatives.',
-                
+
                 // Extracurricular Pillars
                 'pillars-title': 'Extracurricular Pillars',
                 'pillars-desc': 'Hover over the cards to view details and achievements for each pillar.',
@@ -1457,7 +1703,7 @@
                 'pillar-3-badge2': 'AgTech & AI',
                 'pillar-3-title': 'AgTech Innovation & AI Solutions',
                 'pillar-3-desc': 'Product leadership at Hectara, conducting field research with real farmers and regional cooperatives, integrating computational intelligence to solve economic and productivity bottlenecks in agribusiness.',
-                
+
                 // Academic Honors
                 'honors-label': 'Recognition & Awards',
                 'honors-title': 'Academic Honors & Distinctions',
@@ -1474,7 +1720,7 @@
                 'honor-4-tag': 'State & Regional',
                 'honor-4-title': 'Sports Champion (2023–26)',
                 'honor-4-desc': '8 gold medals and 2 state finals for the volleyball squad with sustained team captaincy under pressure.',
-                
+
                 // Technical Impact
                 'impact-label': 'Innovation & Engineering',
                 'impact-title': 'Technical Impact & Projects',
@@ -1488,7 +1734,7 @@
                 'project-academic-title': 'Reserva Aí',
                 'project-academic-desc': 'Full hotel reservation and management system developed during technical education, featuring scalable architecture and completed prototype.',
                 'project-view-code': 'View Source Code',
-                
+
                 // Skills
                 'skills-title': 'Proficiencies & Competencies',
                 'skills-desc': 'Applied practical domains and core leadership competencies.',
@@ -1510,7 +1756,7 @@
                 'comp-3-sub': 'Critical Analysis',
                 'comp-4-title': 'Organization',
                 'comp-4-sub': 'Execution & Rigor',
-                
+
                 // Contact & Footer
                 'contact-badge': 'Your Turn',
                 'contact-title': "Let's Talk?",
@@ -1555,25 +1801,25 @@
         function initTubelightNavbar() {
             const navbar = document.getElementById('tubelight-navbar');
             if (!navbar) return;
-            
+
             const items = navbar.querySelectorAll('.nav-item');
             const lamp = document.getElementById('tubelight-lamp');
-            
+
             function setActive(item) {
                 items.forEach(i => {
                     i.classList.remove('text-primary', 'active-tab');
                     i.classList.add('text-gray-400');
                 });
-                
+
                 item.classList.remove('text-gray-400');
                 item.classList.add('text-primary', 'active-tab');
-                
+
                 const itemRect = item.getBoundingClientRect();
                 const navRect = navbar.getBoundingClientRect();
-                
+
                 const left = itemRect.left - navRect.left;
                 const width = itemRect.width;
-                
+
                 lamp.style.transform = `translateX(${left}px)`;
                 lamp.style.width = `${width}px`;
             }
@@ -1587,7 +1833,7 @@
             if (activeItem) {
                 setTimeout(() => setActive(activeItem), 100);
             }
-            
+
             window.addEventListener('resize', () => {
                 const currentActive = navbar.querySelector('.active-tab');
                 if (currentActive) setActive(currentActive);
